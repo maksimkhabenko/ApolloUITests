@@ -1,0 +1,17 @@
+{
+  "host":"http://apollowallet.org",
+  "adminPassword":"1",
+
+  "standartWallet":
+  {
+    "user":"APL-AKU5-JP6B-Y42V-H5X8U",
+    "pass":"111"
+  },
+
+  "vaultWallet":
+  {
+    "user":"APL-MK35-9X23-YQ5E-8QBKH",
+    "pass":"1"
+  }
+
+}

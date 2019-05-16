@@ -1,0 +1,16 @@
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/elements/TextField.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/helpers/BasePage.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/helpers/CustomFieldDecorator.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/conf/Wallet.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/helpers/PageManager.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/elements/WebElementBase.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/elements/IWebElements.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/helpers/IWebPage.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/LoginPage.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/conf/TestConfig.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/conf/DriverType.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/elements/Button.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/helpers/PageObjectManager.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/pages/elements/CheckBox.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/conf/DriverSetup.java
+/home/mkhabenko/Work/ApolloUITests/src/main/java/conf/DriverFactory.java
