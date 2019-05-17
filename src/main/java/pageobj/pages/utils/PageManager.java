@@ -1,10 +1,7 @@
-package pages.helpers;
+package pageobj.pages.utils;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import pages.LoginPage;
-
-import java.util.HashMap;
+import pageobj.pages.models.LoginPage;
 
 public class PageManager {
     private WebDriver webDriver;
