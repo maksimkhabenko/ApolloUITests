@@ -1,5 +1,5 @@
 {
-  "host":"http://apollowallet.org",
+  "host":"http://51.15.247.49:7876",
   "adminPassword":"1",
 
   "standartWallet":

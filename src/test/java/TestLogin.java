@@ -1,10 +1,13 @@
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import pageobj.elements.models.Notification;
 import pageobj.pages.models.LoginPage;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -42,11 +45,15 @@ public class TestLogin extends TestBase {
         log.info("Step 3: Click on Submit Button");
         loginPage.clickSubmitBtn();
         log.info("Step 4: Check that Error Notification Secret Phrase is required is present");
+        /*
         wait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return loginPage.getNotificationTitle().equals("Error");
             }
         });
-        assertEquals("Secret Phrase is required.",loginPage.getNotificationMessage());
+         */
+        loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Secret Phrase is required.")));
+        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Secret Phrase is required."))));
+
     }
 }

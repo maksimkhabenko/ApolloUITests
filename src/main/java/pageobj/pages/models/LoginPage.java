@@ -8,6 +8,8 @@ import pageobj.elements.models.Notification;
 import pageobj.elements.models.TextField;
 import pageobj.pages.BasePage;
 
+import java.util.List;
+
 public class LoginPage extends BasePage {
 
     @FindBy(className = "btn")
@@ -52,18 +54,14 @@ public class LoginPage extends BasePage {
     @FindBy (css = "input[type='file']")
     private Button uploadFileBtn;
 
-    @FindBy (css = "h4[class='title']")
-    private Notification notificationTitle;
 
-    @FindBy(css = "div[class='message']")
-    private Notification notificationMess;
-
-   // @FindBy(className = "form-tab")
-   // private List<Notification> notificationMessages;
+    @FindBy(className = "notification-message")
+    private List<Notification> notificationsMessages;
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
     public void logining(String login){
          accountIdField.writeText(login);
          submit.click();
@@ -72,19 +70,17 @@ public class LoginPage extends BasePage {
     public void switchToNonActiveTab() {
         nonActiveBtn.click();
     }
+
     public void enterSecretPhrase (String secretphrase) {
         password.clear();
         password.writeText(secretphrase);
     }
+
     public void clickSubmitBtn() {
         submit.click();
     }
-    public String getNotificationTitle() {
-        return notificationTitle.readText();
-    }
-    public String getNotificationMessage() {
-        return notificationMess.readText();
-    }
 
-
+    public List<Notification> getNotificationsMessages() {
+        return notificationsMessages;
+    }
 }

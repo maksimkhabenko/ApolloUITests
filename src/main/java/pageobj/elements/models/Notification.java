@@ -1,6 +1,8 @@
 package pageobj.elements.models;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pageobj.elements.WebElementBase;
 
 public class Notification extends WebElementBase {
@@ -8,12 +10,12 @@ public class Notification extends WebElementBase {
         super(webElement);
     }
 
-    @Override
-    public String readText() {
-        System.out.println(super.readText());
-        if (super.readText().contains("You are using up to date version")){
-            super.click();
-        }
-        return super.readText();
+
+    public String getTitle(){
+        return webElement.findElement(By.className("title")).getText();
+    }
+
+    public String getMeassage(){
+        return webElement.findElement(new By.ByClassName("message")).getText();
     }
 }
