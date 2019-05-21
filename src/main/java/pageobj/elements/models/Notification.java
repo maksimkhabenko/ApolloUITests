@@ -18,4 +18,9 @@ public class Notification extends WebElementBase {
     public String getMeassage(){
         return webElement.findElement(new By.ByClassName("message")).getText();
     }
+
+    @Override
+    public void click() {
+        super.click();
+    }
 }

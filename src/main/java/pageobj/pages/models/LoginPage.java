@@ -62,9 +62,9 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void logining(String login){
-         accountIdField.writeText(login);
-         submit.click();
+    public void LoginToWallet(String accountID){
+        enterAccountID(accountID);
+        clickSubmitBtn();
     }
 
     public void switchToNonActiveTab() {
@@ -82,5 +82,10 @@ public class LoginPage extends BasePage {
 
     public List<Notification> getNotificationsMessages() {
         return notificationsMessages;
+    }
+
+    public void enterAccountID(String accountID) {
+        accountIdField.clear();
+        accountIdField.writeText(accountID);
     }
 }
