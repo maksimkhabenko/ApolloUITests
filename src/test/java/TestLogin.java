@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -82,6 +84,24 @@ public class TestLogin extends TestBase {
         log.info("Step 6: Check Log In Page");
         verifyURL("login");
 
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Log In by Invalid Account ID")
+    @Order(6)
+    public void testLogInByAccountIDNegative() {
+        LoginPage loginPage = getPage(LoginPage.class);
+        log.info("Step 2: Log In by Invalid Account ID");
+        loginPage.enterAccountID("negativetest");
+        log.info("Step 3: Press ENTER button");
+        loginPage.clickSubmitBtn();
+        log.info("Step 4: Check that Error Notification is present");
+        wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return  loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Incorrect \"account\"")));
+            }
+        });
+        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Incorrect \"account\""))));
     }
 
 
