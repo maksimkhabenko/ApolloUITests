@@ -21,6 +21,6 @@ public class Notification extends WebElementBase {
 
     @Override
     public void click() {
-        super.click();
+        webElement.findElement(new By.ByClassName("message")).click();
     }
 }

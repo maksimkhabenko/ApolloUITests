@@ -16,7 +16,7 @@ public class UserProfileModal extends BasePage {
         super(driver);
     }
 
-    public void clickLogoutBtn() throws InterruptedException {
+    public void clickLogoutBtn()  {
         logOutBtn.click();
     }
 

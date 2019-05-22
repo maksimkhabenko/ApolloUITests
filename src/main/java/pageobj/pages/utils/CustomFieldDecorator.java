@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 import org.openqa.selenium.support.pagefactory.DefaultFieldDecorator;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 import pageobj.elements.IWebElements;
 
 import java.lang.reflect.*;
@@ -16,6 +17,7 @@ public class CustomFieldDecorator extends DefaultFieldDecorator {
     public CustomFieldDecorator(SearchContext searchContext) {
         super(new DefaultElementLocatorFactory(searchContext));
     }
+
 
     /**
      * Метод вызывается фабрикой для каждого поля в классе

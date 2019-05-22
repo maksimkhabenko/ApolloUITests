@@ -1,6 +1,7 @@
 package pageobj.elements;
 
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -18,13 +19,11 @@ public class WebElementBase implements IWebElements {
         PageFactory.initElements(new CustomFieldDecorator(webDriver),  this);
     }
     protected void click(){
-
-        if (webElement !=null) {
-            webElement.click();
-        }
-        else {
-            throw new ElementNotVisibleException(webElement.getText());
-        }
+         if (webElement != null) {
+             webElement.click();
+         } else {
+             throw new ElementNotVisibleException(webElement.getText());
+         }
     }
 
     protected void writeText(String text){
@@ -46,4 +45,7 @@ public class WebElementBase implements IWebElements {
         }
     }
 
+    public WebElement getWebElement() {
+        return webElement;
+    }
 }

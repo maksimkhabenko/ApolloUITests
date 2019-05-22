@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="33c26fd6-69ef-4412-9af8-c037fd6079b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLogin.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,10 +29,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="82" column="54" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="54" />
+            <state relative-caret-position="217">
+              <caret line="86" column="39" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3351#3352#0" expanded="true" />
+                <element signature="e#3392#3393#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="100" column="70" lean-forward="true" selection-start-line="100" selection-start-column="70" selection-end-line="100" selection-end-column="70" />
+            <state relative-caret-position="-68">
+              <caret line="325" column="34" lean-forward="true" selection-start-line="325" selection-start-column="34" selection-end-line="325" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,22 +53,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/PageFactory.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/LocatingCustomElementListHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="187">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/pagefactory/FieldDecorator.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -66,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="28" />
+            <state relative-caret-position="191">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,19 +86,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/info">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-line="4" selection-end-column="11" />
+            <state relative-caret-position="522">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/pagefactory/DefaultFieldDecorator.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="120">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/WrapperFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,39 +121,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Button.java">
+        <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Constructor.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding>
-                <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#388#389#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2220">
+              <caret line="200" column="52" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+            <state relative-caret-position="210">
+              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,10 +156,13 @@
     <findStrings>
       <find>Page created</find>
       <find>Page crated</find>
-      <find>log.info</find>
       <find>Log In by Secret Phrase</find>
       <find>Step 3</find>
       <find>Click on Submit But</find>
+      <find>verifyUserAccountRsInfo</find>
+      <find>searchContext</find>
+      <find>log.info</find>
+      <find>customSecretPhrase</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MyTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/helpers/Hooks.java" />
         <option value="$PROJECT_DIR$/src/test/java/MyTest1.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/BasePage.java" />
@@ -210,13 +217,15 @@
         <option value="$PROJECT_DIR$/src/test/java/DashboardPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Text.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java" />
         <option value="$PROJECT_DIR$/src/main/resources/info" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestLogin.java" />
       </list>
     </option>
@@ -267,6 +276,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,6 +327,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pageobj" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pageobj" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,6 +365,16 @@
               <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pageobj" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,19 +390,10 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,7 +434,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestLogin.testLogInByAccountIDNegative">
+  <component name="RunManager" selected="JUnit.TestLogin.testLogInByEmptySecretPhraseNegative">
     <configuration name="TestLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
@@ -422,21 +444,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testLogInByAccountID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLogin.testBackSpaceBtn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testLogInByAccountID" />
+      <option name="METHOD_NAME" value="testBackSpaceBtn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testLogInByAccountIDNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLogin.testCreateVaultWalletCustomSecretPhrase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testLogInByAccountIDNegative" />
+      <option name="METHOD_NAME" value="testCreateVaultWalletCustomSecretPhrase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApolloUITests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestLogin" />
+      <option name="METHOD_NAME" value="testCreateVaultWalletVerifyStoreDataNegative" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -447,16 +479,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestLogin" />
       <option name="METHOD_NAME" value="testLogInByEmptySecretPhraseNegative" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLogin.testLogInBySecretPhrase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApolloUITests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testLogInBySecretPhrase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -490,20 +512,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestLogin" />
-      <item itemvalue="JUnit.TestLogin.testLogInByAccountIDNegative" />
-      <item itemvalue="JUnit.TestLogin.testLogInByAccountID" />
-      <item itemvalue="JUnit.TestLogin.testLogInByEmptySecretPhraseNegative" />
-      <item itemvalue="JUnit.TestLogin.testLogInBySecretPhrase" />
       <item itemvalue="Maven.ApolloUITests [clean,test...]" />
+      <item itemvalue="JUnit.TestLogin.testBackSpaceBtn" />
+      <item itemvalue="JUnit.TestLogin.testCreateVaultWalletVerifyStoreDataNegative" />
+      <item itemvalue="JUnit.TestLogin.testCreateVaultWalletCustomSecretPhrase" />
+      <item itemvalue="JUnit.TestLogin" />
+      <item itemvalue="JUnit.TestLogin.testLogInByEmptySecretPhraseNegative" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestLogin.testLogInByAccountIDNegative" />
-        <item itemvalue="JUnit.TestLogin" />
-        <item itemvalue="JUnit.TestLogin.testLogInBySecretPhrase" />
-        <item itemvalue="JUnit.TestLogin.testLogInByAccountID" />
         <item itemvalue="JUnit.TestLogin.testLogInByEmptySecretPhraseNegative" />
+        <item itemvalue="JUnit.TestLogin" />
+        <item itemvalue="JUnit.TestLogin.testCreateVaultWalletCustomSecretPhrase" />
+        <item itemvalue="JUnit.TestLogin.testCreateVaultWalletVerifyStoreDataNegative" />
+        <item itemvalue="JUnit.TestLogin.testBackSpaceBtn" />
       </list>
     </recent_temporary>
   </component>
@@ -536,42 +558,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLogin_testLogInBySecretPhrase - 2019.05.21 at 17h 58m 28s.xml">
-      <configuration name="TestLogin.testLogInBySecretPhrase" configurationId="JUnit" />
+    <history-entry file="TestLogin_testCreateVaultWalletVerifyStoreDataNegative - 2019.05.22 at 17h 33m 40s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testLogInBySecretPhrase - 2019.05.21 at 18h 04m 20s.xml">
-      <configuration name="TestLogin.testLogInBySecretPhrase" configurationId="JUnit" />
+    <history-entry file="TestLogin_testBackSpaceBtn - 2019.05.22 at 17h 34m 28s.xml">
+      <configuration name="TestLogin.testBackSpaceBtn" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin - 2019.05.21 at 18h 04m 40s.xml">
+    <history-entry file="TestLogin_testCreateVaultWalletVerifyStoreDataNegative - 2019.05.22 at 17h 49m 54s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLogin_testCreateVaultWalletVerifyStoreDataNegative - 2019.05.22 at 17h 50m 40s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLogin_testCreateVaultWalletCustomSecretPhrase - 2019.05.22 at 18h 00m 36s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletCustomSecretPhrase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLogin_testCreateVaultWalletCustomSecretPhrase - 2019.05.22 at 18h 01m 54s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletCustomSecretPhrase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLogin_testCreateVaultWalletCustomSecretPhrase - 2019.05.22 at 18h 06m 07s.xml">
+      <configuration name="TestLogin.testCreateVaultWalletCustomSecretPhrase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLogin - 2019.05.22 at 18h 07m 27s.xml">
       <configuration name="TestLogin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin - 2019.05.22 at 10h 32m 43s.xml">
-      <configuration name="TestLogin" configurationId="JUnit" />
+    <history-entry file="TestLogin_testLogInByEmptySecretPhraseNegative - 2019.05.22 at 18h 10m 00s.xml">
+      <configuration name="TestLogin.testLogInByEmptySecretPhraseNegative" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 38m 24s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 39m 07s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 41m 05s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 43m 08s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 43m 34s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLogin_testLogInByAccountIDNegative - 2019.05.22 at 10h 43m 56s.xml">
-      <configuration name="TestLogin.testLogInByAccountIDNegative" configurationId="JUnit" />
+    <history-entry file="TestLogin_testLogInByEmptySecretPhraseNegative - 2019.05.22 at 18h 10m 33s.xml">
+      <configuration name="TestLogin.testLogInByEmptySecretPhraseNegative" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21582733" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -580,8 +602,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33693305" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40064794" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28509718" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -593,7 +615,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.16491422" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.08356392" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -603,6 +625,18 @@
     <MESSAGE value="init" />
     <MESSAGE value="Updated" />
     <option name="LAST_COMMIT_MESSAGE" value="Updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestBase.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/helpers/Hooks.java" />
@@ -700,54 +734,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/pagefactory/DefaultFieldDecorator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/LocatingCustomElementListHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1112#1126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageObjectManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/CheckBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/WrapperFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/NotificationContainer.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar!/org/openqa/selenium/By.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -766,24 +755,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        <state relative-caret-position="120">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,9 +800,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/ui/FluentWait.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/TextField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -807,73 +830,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Text.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#196#197#0" expanded="true" />
             <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="82" column="54" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="54" />
+        <state relative-caret-position="270">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/PageFactory.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/CheckBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="180">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding>
             <element signature="e#359#360#0" expanded="true" />
@@ -882,39 +874,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar!/org/openqa/selenium/SearchContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/PageFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/pagefactory/DefaultFieldDecorator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/info">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/pagefactory/FieldDecorator.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-line="4" selection-end-column="11" />
+        <state relative-caret-position="105">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/WrapperFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Constructor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="200" column="52" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/LocatingCustomElementListHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="86" column="39" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3351#3352#0" expanded="true" />
+            <element signature="e#3392#3393#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="100" column="70" lean-forward="true" selection-start-line="100" selection-start-column="70" selection-end-line="100" selection-end-column="70" />
+        <state relative-caret-position="-68">
+          <caret line="325" column="34" lean-forward="true" selection-start-line="325" selection-start-column="34" selection-end-line="325" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

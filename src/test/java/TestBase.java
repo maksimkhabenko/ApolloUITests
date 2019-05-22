@@ -9,12 +9,8 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageobj.pages.IWebPage;
-import pageobj.pages.models.LoginPage;
-import pageobj.pages.utils.PageManager;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -27,7 +23,6 @@ import static org.openqa.selenium.support.PageFactory.*;
 @Execution(ExecutionMode.CONCURRENT)
 public class TestBase {
     protected WebDriverWait wait;
-    protected PageManager pageManager;
     protected DriverFactory driverFactory = new DriverFactory();
     protected WebDriver webDriver;
 
@@ -46,7 +41,6 @@ public class TestBase {
     @BeforeEach
      void setUp() {
         this.webDriver = driverFactory.getDriver();
-        this.pageManager = new PageManager(webDriver);
         this.wait = new WebDriverWait(webDriver,15);
         this.webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         this.webDriver.manage().window().maximize();
@@ -54,14 +48,20 @@ public class TestBase {
     }
 
     protected void verifyURL(String pageName){
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return   webDriver.getCurrentUrl().contains(pageName);
-            }
-        });
-        Assert.assertTrue( "Verify current url: "+pageName,webDriver.getCurrentUrl().contains(pageName));
-
+        try {
+            wait.until(new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver d) {
+                    return webDriver.getCurrentUrl().contains(pageName);
+                }
+            });
+        }catch (Exception e){}
+         finally {
+            String msg = "Verify current url: " + pageName + " but current page: "+webDriver.getCurrentUrl();
+            Assert.assertTrue( msg,webDriver.getCurrentUrl().contains(pageName));
+        }
     }
+
+
 
     protected  <T> T getPage(Class<T> clazz){
         return initElements(webDriver, clazz);
