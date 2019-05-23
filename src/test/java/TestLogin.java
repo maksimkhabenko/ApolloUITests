@@ -1,13 +1,17 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
 import pageobj.pages.models.modals.SettingsModal;
 import pageobj.pages.models.modals.UserProfileModal;
 
+import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class TestLogin extends TestBase {
@@ -72,7 +76,7 @@ public class TestLogin extends TestBase {
         loginPage.clickSubmitBtn();
 
         log.info("Step 4: Verify User Account Rs");
-        dashboardPage.getUserAccountRs().equals(testConfig.getStandartWallet().getUser());
+        assertTrue(dashboardPage.getUserAccountRs().equals(testConfig.getStandartWallet().getUser()),"Verify User Account Rs");
 
         log.info("Step 5: Log out");
         dashboardPage.clickAccountIconBtn().clickLogoutBtn();
@@ -115,7 +119,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Log Out")
     @Order(3)
-    void testLogOut () throws Exception {
+    void testLogOut () {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         UserProfileModal userProfileModal;
@@ -341,7 +345,7 @@ public class TestLogin extends TestBase {
     @DisplayName("NEGATIVE: VAULT WALLET -> Error message is present when User enter invalid secret phrase")
     @Order(12)
     void testCreateVaultWalletInvalidSecretPhraseNegative(){
-        LoginPage loginPage = getPage(LoginPage.class);;
+        LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
@@ -539,7 +543,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Import valid Secret File + Invalid secret phrase")
     @Order(17)
-    public void testImportInvalidSecretPhrase() throws Exception {
+    public void testImportInvalidSecretPhrase() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Delete file if it exists");
@@ -574,7 +578,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Restore Account with empty data: NO FILE and NO Secret Phrase")
     @Order(18)
-    public void testImportEmptyData() throws Exception {
+    public void testImportEmptyData() {
         LoginPage loginPage = getPage(LoginPage.class);
         log.info("Step 2: Delete file if it exists");
         apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
@@ -708,7 +712,9 @@ public class TestLogin extends TestBase {
                  .enterPass(testConfig.getVaultWallet().getPass())
                  .clickExportBtn();
 
-        //btn absolute btn-right blue round round-top-left round-bottom-right
+        boolean isPresent = wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser()));
+        assertTrue(isPresent,"File not found");
+
 
         try {
             Thread.sleep(10000);
@@ -745,6 +751,23 @@ public class TestLogin extends TestBase {
 
             log.info("Step : Click on Submit Button");
             loginPage.clickSubmitBtn();
+    }
+
+    private boolean isPresent(String fileName){
+        boolean isPresent = false;
+        File folder = new File(System.getProperty("user.home")+"/Downloads/");
+        File[] listOfFiles = folder.listFiles();
+
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                if (file.getName().contains(fileName)) {
+                    file.delete();
+                    isPresent =true;
+                    break;
+                }
+            }
+        }
+        return isPresent;
     }
 
 }
