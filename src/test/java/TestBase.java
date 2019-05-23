@@ -11,10 +11,14 @@ import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobj.elements.models.Notification;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
 import static org.openqa.selenium.support.PageFactory.*;
@@ -22,12 +26,12 @@ import static org.openqa.selenium.support.PageFactory.*;
 
 @Execution(ExecutionMode.CONCURRENT)
 public class TestBase {
-    protected WebDriverWait wait;
-    protected DriverFactory driverFactory = new DriverFactory();
-    protected WebDriver webDriver;
+    WebDriverWait wait;
+    DriverFactory driverFactory = new DriverFactory();
+    WebDriver webDriver;
 
-    protected static TestConfig testConfig;
-    protected static Logger log = Logger.getLogger(TestBase.class.getName());
+    static TestConfig testConfig;
+    static Logger log = Logger.getLogger(TestBase.class.getName());
 
     private static String baseUrl;
 
@@ -47,17 +51,26 @@ public class TestBase {
         this.webDriver.get(baseUrl);
     }
 
-    protected void verifyURL(String pageName){
+    void verifyURL(String pageName){
         try {
-            wait.until(new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver d) {
-                    return webDriver.getCurrentUrl().contains(pageName);
-                }
-            });
-        }catch (Exception e){}
+            wait.until((ExpectedCondition<Boolean>) d -> webDriver.getCurrentUrl().contains(pageName));
+        }catch (Exception e){
+            log.log(Level.WARNING, e.getMessage());
+        }
          finally {
             String msg = "Verify current url: " + pageName + " but current page: "+webDriver.getCurrentUrl();
             Assert.assertTrue( msg,webDriver.getCurrentUrl().contains(pageName));
+        }
+    }
+
+     void verifyNotifications(List<Notification> notifications, String expectedMessage){
+
+        try {
+            wait.until((ExpectedCondition<Boolean>) d -> notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+        }catch (Exception e){}
+        finally {
+            Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+
         }
     }
 
