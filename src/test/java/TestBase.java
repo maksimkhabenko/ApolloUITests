@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.Notification;
+import utils.APIConnector;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +30,7 @@ public class TestBase {
     WebDriverWait wait;
     DriverFactory driverFactory = new DriverFactory();
     WebDriver webDriver;
+    APIConnector apiConnector;
 
     static TestConfig testConfig;
     static Logger log = Logger.getLogger(TestBase.class.getName());
@@ -44,6 +46,7 @@ public class TestBase {
 
     @BeforeEach
      void setUp() {
+        this.apiConnector = new APIConnector(testConfig);
         this.webDriver = driverFactory.getDriver();
         this.wait = new WebDriverWait(webDriver,15);
         this.webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

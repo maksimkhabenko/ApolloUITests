@@ -1,6 +1,7 @@
 {
   "host":"http://51.15.247.49:7876",
   "adminPassword":"1",
+  "chainID":"a2e9b9",
 
   "standartWallet":
   {

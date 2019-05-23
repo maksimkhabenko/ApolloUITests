@@ -1,5 +1,6 @@
 package pageobj.pages.models;
 
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.*;
 import pageobj.pages.BasePage;
 
+import java.io.File;
+import java.net.URL;
 import java.util.List;
 
 public class LoginPage extends BasePage {
@@ -112,9 +115,7 @@ public class LoginPage extends BasePage {
         } catch (Exception e){
             executor.executeScript("arguments[0].click();", closeModalWindowBtn.getWebElement());
         }
-
     }
-
 
     public void clickCreateAccountBtn() {
         createAccountBtn.click();
@@ -138,5 +139,14 @@ public class LoginPage extends BasePage {
 
     public void clickCheckBoxCustomSecretPhrase() {
         checkboxCustomSecretPhrase.setChecked(true);
+    }
+
+    public void clickImportVaultWalletBtn() {
+        importVaultWalletBtn.click();
+    }
+
+    public void importFile(String acoountID) {
+      URL url =   Test.class.getClassLoader().getResource(acoountID);
+      uploadFileBtn.getWebElement().sendKeys(url.getPath());
     }
 }
