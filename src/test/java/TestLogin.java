@@ -2,6 +2,7 @@ import org.junit.jupiter.api.*;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
+import pageobj.pages.models.modals.SettingsModal;
 import pageobj.pages.models.modals.UserProfileModal;
 
 import java.util.List;
@@ -614,7 +615,6 @@ public class TestLogin extends TestBase {
 
         //log.test.txt("Step 4: Verify IMPORT ACCOUNT Page (SECRET KEY)");
         //loginPage.verifyImportAccountSecretKeyPage();
-
         log.info("Step 5: Switch to SECRET FILE IMPORT");
         loginPage.switchToNonActiveTab();
 
@@ -665,7 +665,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Import Big Size Secret File + VALID secret phrase")
     @Order(21)
-    public void testImportBigSizeSecretFile() throws Exception {
+    public void testImportBigSizeSecretFile() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Delete file if it exists");
@@ -691,5 +691,60 @@ public class TestLogin extends TestBase {
     }
 
 
+    @Test
+    @DisplayName("Export exisct secret file")
+    void testExportSecretFile() {
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Precondition : Import and login");
+        importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+        loginPage.closeModalWindow();
+        loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
+
+        log.info("Step 2: Click on Settings Button");
+        loginPage.clickSettingsBtn()
+                 .clickExportFileBtn()
+                 .enterAccountID(testConfig.getVaultWallet().getUser())
+                 .enterPass(testConfig.getVaultWallet().getPass())
+                 .clickExportBtn();
+
+        //btn absolute btn-right blue round round-top-left round-bottom-right
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+     private void importSCFile(LoginPage loginPage, String accountID, String pass){
+         log.info("Step : Click on Import Vault Wallet button");
+         loginPage.clickImportVaultWalletBtn();
+
+         log.info("Step : Switch to SECRET FILE IMPORT");
+         loginPage.switchToNonActiveTab();
+
+         log.info("Step: Input Invalid Secret Phrase");
+         loginPage.enterSecretPhrase(pass);
+
+         log.info("Step: Import correct file");
+         loginPage.importFile(accountID);
+
+         log.info("Step: Click on RESTORE ACCOUNT button");
+         loginPage.clickSubmitBtn();
+     }
+
+
+    private void loginToWallet(LoginPage loginPage, String accountId){
+
+            log.info("Step : Log In by Account ID");
+            loginPage.enterAccountID(accountId.substring(3));
+
+            log.info("Step : Click on Submit Button");
+            loginPage.clickSubmitBtn();
+    }
 
 }

@@ -147,6 +147,10 @@ public class LoginPage extends BasePage {
 
     public void importFile(String acoountID) {
       URL url =   Test.class.getClassLoader().getResource(acoountID);
-      uploadFileBtn.getWebElement().sendKeys(url.getPath());
+        String path = url.getPath();
+        if (System.getProperty("os.name").contains("Win")){
+         path =  path.substring(1);
+        }
+      uploadFileBtn.getWebElement().sendKeys(path);
     }
 }
