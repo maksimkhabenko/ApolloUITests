@@ -1,7 +1,4 @@
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -10,7 +7,7 @@ import pageobj.pages.models.modals.UserProfileModal;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class TestLogin extends TestBase {
 
@@ -28,7 +25,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Log In by Secret Phrase")
     @Order(1)
-    public void testLogInBySecretPhrase () throws Exception {
+    void testLogInBySecretPhrase () {
         LoginPage loginPage = getPage(LoginPage.class);
         log.info("Step 2: Switch to Login by Secret Phrase");
         loginPage.switchToNonActiveTab();
@@ -46,7 +43,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Log in without any password (empty field)")
     @Order(5)
-    public void testLogInByEmptySecretPhraseNegative() {
+    void testLogInByEmptySecretPhraseNegative() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Switch to Login by Secret Phrase");
@@ -56,21 +53,14 @@ public class TestLogin extends TestBase {
         loginPage.clickSubmitBtn();
 
         log.info("Step 4: Check that Error Notification Secret Phrase is required is present");
-
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return  loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Secret Phrase is required.")));
-            }
-        });
-
-        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Secret Phrase is required."))));
+        verifyNotifications(loginPage.getNotificationsMessages(),"Secret Phrase is required.");
 
     }
 
     @Test
     @DisplayName("Log In by Account ID")
     @Order(2)
-    public void testLogInByAccountID() throws InterruptedException {
+    void testLogInByAccountID() {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
 
@@ -94,7 +84,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Log In by Invalid Account ID")
     @Order(6)
-    public void testLogInByAccountIDNegative() {
+    void testLogInByAccountIDNegative() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Log In by Invalid Account ID");
@@ -104,39 +94,27 @@ public class TestLogin extends TestBase {
         loginPage.clickSubmitBtn();
 
         log.info("Step 4: Check that Error Notification is present");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Incorrect \"account\"");
 
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return  loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Incorrect \"account\"")));
-            }
-        });
-
-        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Incorrect \"account\""))));
     }
 
     @Test
     @DisplayName("NEGATIVE: Log In without any Account ID")
     @Order(7)
-    public void testLogInByEmptyAccountIDNegative() throws InterruptedException {
+    void testLogInByEmptyAccountIDNegative(){
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Click on Submit Button");
         loginPage.clickSubmitBtn();
 
         log.info("Step 3: Check that Error Notification is present");
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return  loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Account ID is required.")));
-            }
-        });
-
-        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Account ID is required."))));
+        verifyNotifications(loginPage.getNotificationsMessages(),"Account ID is required.");
     }
 
     @Test
     @DisplayName("Log Out")
     @Order(3)
-    public void testLogOut () throws Exception {
+    void testLogOut () throws Exception {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         UserProfileModal userProfileModal;
@@ -163,7 +141,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("NEGATIVE: Press BACKSPACE button after logging out")
     @Order(2)
-    public void testBackSpaceBtn (){
+    void testBackSpaceBtn (){
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         UserProfileModal userProfileModal;
@@ -198,7 +176,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Close Modal Window")
     @Order(4)
-    public void testExitModalWindowBtn ()  {
+    void testExitModalWindowBtn ()  {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Click on Create New User? button");
@@ -214,7 +192,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Create Vault Wallet with randomly generated secret phrase")
     @Order(9)
-    public void testCreateVaultWalletRandomlyGeneratedSecretPhrase()  {
+    void testCreateVaultWalletRandomlyGeneratedSecretPhrase()  {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         String secretPhrase;
@@ -267,7 +245,7 @@ public class TestLogin extends TestBase {
     @DisplayName("NEGATIVE: VAULT WALLET -> Error message is present when User didn't store private data")
     @Order(11)
     @Tag("NEGATIVE")
-    public void testCreateVaultWalletVerifyStoreDataNegative() throws Exception {
+    void testCreateVaultWalletVerifyStoreDataNegative() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Click on Create New User? button");
@@ -292,14 +270,7 @@ public class TestLogin extends TestBase {
         loginPage.clickNextBtn();
 
         log.info("Step 9: Check that error message is present");
-
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return  loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("You have to verify that you stored your private data.")));
-            }
-        });
-
-        assertTrue(loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("You have to verify that you stored your private data."))));
+        verifyNotifications(loginPage.getNotificationsMessages(),"You have to verify that you stored your private data.");
 
         log.info("Step 10: Close modal window");
         loginPage.closeModalWindow();
@@ -311,7 +282,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Create Vault Wallet with custom secret phrase")
     @Order(10)
-    public void testCreateVaultWalletCustomSecretPhrase() throws InterruptedException {
+    void testCreateVaultWalletCustomSecretPhrase(){
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
 
@@ -364,6 +335,170 @@ public class TestLogin extends TestBase {
         log.info("Step 12: Check Log In Page");
         verifyURL("login");
     }
+
+    @Test
+    @DisplayName("NEGATIVE: VAULT WALLET -> Error message is present when User enter invalid secret phrase")
+    @Order(12)
+    void testCreateVaultWalletInvalidSecretPhraseNegative(){
+        LoginPage loginPage = getPage(LoginPage.class);;
+
+        log.info("Step 2: Click on Create New User? button");
+        loginPage.clickNewUserBtn();
+
+        //log.info("Step 3: Verify Create New User page");
+        //website.loginPage().verifyCreateStandardWallet();
+
+        log.info("Step 4: Switch to Vault Wallet");
+        loginPage.switchToNonActiveTab();
+
+        //log.info("Step 5: Verify Create new vault wallet page");
+        //website.loginPage().verifyCreateVaultWallet();
+
+        log.info("Step 6: Press Create Account button");
+        loginPage.clickCreateAccountBtn();
+
+        //log.info("Step 7: Verify Create New Vault Wallet Page (Second Step)");
+        //website.loginPage().verifyCreateVaultWalletSecondStep();
+        //Thread.sleep(2000);
+
+        log.info("Step 6: Click on CheckBox");
+        loginPage.clickCheckboxDataStored();
+
+        log.info("Step 7: Click on Next Button");
+        loginPage.clickNextBtn();
+
+
+        log.info("Step 8: Input Invalid Secret Phrase");
+        loginPage.enterSecretPhrase("invalid secret phrase");
+
+
+        log.info("Step 9: Press Create New Account button ");
+        loginPage.clickSubmitBtn();
+
+
+        log.info("Step 10: Verify Error message is shown");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Incorrect secret phrase!");
+
+
+        log.info("Step 11: Close modal window");
+        loginPage.closeModalWindow();
+
+        log.info("Step 12: Verify Log In page");
+        verifyURL("login");
+    }
+
+    @Test
+    @DisplayName("Create Standard Wallet")
+    @Order(13)
+    void testCreateStandardWallet() {
+        LoginPage loginPage = getPage(LoginPage.class);
+        DashboardPage dashboardPage = getPage(DashboardPage.class);
+        String secretPhrase;
+        String accountId;
+
+        log.info("Step 2: Click on Create New User? button");
+        loginPage.clickNewUserBtn();
+
+        //System.out.println("Step 3: Verify Create New User page");
+        //website.loginPage().verifyCreateStandardWallet();
+
+        log.info("Step 4: Press Create Account button");
+        loginPage.clickCreateAccountBtn();
+
+        log.info("Step 5: Verify Create new user page (Second Step)");
+        secretPhrase = loginPage.copySecretPhrase();
+        accountId = loginPage.copyAccountId();
+
+        log.info("Step 6: Click on CheckBox");
+        loginPage.clickCheckboxDataStored();
+
+        log.info("Step 7: Click on Next Button");
+        loginPage.clickNextBtn();
+
+        log.info("Step 8: Input Secret Phrase");
+        loginPage.enterSecretPhrase(secretPhrase);
+
+
+        log.info("Step 9: Press Create New Account button ");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify User Account Rs");
+        assertEquals(accountId,dashboardPage.getUserAccountRs());
+
+
+        log.info("Step 11: Do Log out");
+        dashboardPage.clickAccountIconBtn().clickLogoutBtn();
+
+        log.info("Step 12: Check Log In Page");
+        verifyURL("login");
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: STANDARD WALLET -> Error message is present when User enter invalid secret phrase")
+    @Order(14)
+    void testCreateStandardWalletInvalidSecretPhrase(){
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Step 2: Click on Create New User? button");
+        loginPage.clickNewUserBtn();
+
+        //log.info("Step 3: Verify Create New User page");
+        //website.loginPage().verifyCreateStandardWallet();
+
+        log.info("Step 4: Press Create Account button");
+        loginPage.clickCreateAccountBtn();
+
+        //log.info("Step 5: Verify Create new user page (Second Step)");
+        //website.loginPage().verifyCreateStandardWalletSecondStep();
+
+        log.info("Step 6: Click on CheckBox");
+        loginPage.clickCheckboxDataStored();
+
+        log.info("Step 7: Click on Next Button");
+        loginPage.clickNextBtn();
+
+        log.info("Step 8: Input Secret Phrase");
+        loginPage.enterSecretPhrase("Invalid Secret Phrase");
+
+        log.info("Step 9: Press Create New Account button ");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Error message is present");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Incorrect secret phrase!");
+
+
+        log.info("Step 11: Close Modal Window");
+        loginPage.closeModalWindow();
+
+        log.info("Step 12: Verify Log In Page");
+        verifyURL("login");
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: STANDARD WALLET -> Error message is present when User didn't store private data")
+    @Order(15)
+    void testCreateStandardWalletNegative() {
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Step 2: Click on Create New User? button");
+        loginPage.clickNewUserBtn();
+
+        //log.info("Step 3: Verify Create New User page");
+        //loginPage.verifyCreateStandardWallet();
+
+        log.info("Step 4: Press Create Account button");
+        loginPage.clickCreateAccountBtn();
+
+        //log.info("Step 5: Verify Create new user page (Second Step)");
+        //loginPage.verifyCreateStandardWalletSecondStep();
+
+        log.info("Step 6: Click on Next Button");
+        loginPage.clickNextBtn();
+
+        log.info("Step 7: Error message is present");
+        verifyNotifications(loginPage.getNotificationsMessages(),"You have to verify that you stored your private data.");
+    }
+
 
 
 }
