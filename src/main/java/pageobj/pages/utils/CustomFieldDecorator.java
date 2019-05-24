@@ -1,6 +1,7 @@
 package pageobj.pages.utils;
 
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -14,14 +15,16 @@ import java.lang.reflect.*;
 import java.util.List;
 
 public class CustomFieldDecorator extends DefaultFieldDecorator {
+    private WebDriver webDriver;
     public CustomFieldDecorator(SearchContext searchContext) {
         super(new DefaultElementLocatorFactory(searchContext));
+        this.webDriver = (WebDriver) searchContext;
     }
-
 
     /**
      * Метод вызывается фабрикой для каждого поля в классе
      */
+
     @Override
     public Object decorate(ClassLoader loader, Field field) {
         Class<IWebElements> decoratableClass = decoratableClass(field);
@@ -84,7 +87,7 @@ public class CustomFieldDecorator extends DefaultFieldDecorator {
                                      ElementLocator locator,
                                      Class<IWebElements> clazz) {
         WebElement proxy = proxyForLocator(loader, locator);
-        return WrapperFactory.createInstance(clazz, proxy);
+        return WrapperFactory.createInstance(clazz, proxy, webDriver);
     }
 
     /**
@@ -96,7 +99,7 @@ public class CustomFieldDecorator extends DefaultFieldDecorator {
                                         Class<IWebElements> clazz) {
 
         InvocationHandler handler =
-                new LocatingCustomElementListHandler(locator, clazz);
+                new LocatingCustomElementListHandler(locator, clazz, webDriver);
         List<IWebElements> elements =
                 (List<IWebElements>) Proxy.newProxyInstance(
                         loader, new Class[] {List.class}, handler);

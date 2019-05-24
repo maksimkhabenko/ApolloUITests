@@ -110,11 +110,7 @@ public class LoginPage extends BasePage {
     }
 
     public void closeModalWindow() {
-        try {
             closeModalWindowBtn.click();
-        } catch (Exception e){
-            executor.executeScript("arguments[0].click();", closeModalWindowBtn.getWebElement());
-        }
     }
 
     public void clickCreateAccountBtn() {

@@ -720,8 +720,7 @@ public class TestLogin extends TestBase {
 
         wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser(),false));
         assertTrue(isPresent(testConfig.getVaultWallet().getUser(),true),"File not found");
-        webDriver.navigate().refresh();
-
+        verifyNotifications(loginPage.getNotificationsMessages(),"Your account was successfully removed from this web node.");
         loginPage.clickSettingsBtn()
                 .clickExportFileBtn()
                 .enterAccountID(testConfig.getVaultWallet().getUser())
@@ -729,7 +728,7 @@ public class TestLogin extends TestBase {
                 .clickExportBtn();
 
         verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not get account information : Key for this account is not exist.");
-        
+
     }
 
 

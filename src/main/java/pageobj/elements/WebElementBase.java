@@ -9,6 +9,8 @@ import pageobj.pages.utils.CustomFieldDecorator;
 
 public class WebElementBase implements IWebElements {
     protected WebElement webElement;
+    protected WebDriver webDriver;
+    protected JavascriptExecutor executor;
 
     public WebElementBase(WebElement webElement) {
         this.webElement = webElement;
@@ -16,11 +18,18 @@ public class WebElementBase implements IWebElements {
 
     public WebElementBase(WebElement webElement, WebDriver webDriver) {
         this.webElement = webElement;
+        this.webDriver  = webDriver;
         PageFactory.initElements(new CustomFieldDecorator(webDriver),  this);
     }
+
     public void click(){
          if (webElement != null) {
-             webElement.click();
+             try {
+                 webElement.click();
+             }catch (Exception e){
+                 executor.executeScript("arguments[0].click();", webElement);
+             }
+
          } else {
              throw new ElementNotVisibleException(webElement.getText());
          }
@@ -47,5 +56,11 @@ public class WebElementBase implements IWebElements {
 
     public WebElement getWebElement() {
         return webElement;
+    }
+
+    @Override
+    public void setDriver(WebDriver webDriver) {
+        this.webDriver = webDriver;
+        this.executor = (JavascriptExecutor)webDriver;
     }
 }
