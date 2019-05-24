@@ -698,15 +698,17 @@ public class TestLogin extends TestBase {
 
     @Test
     @DisplayName("Export/Import exisct secret file")
+    @RepeatedTest(10)
     void testExportSecretFile() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Precondition : Import and login");
         importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
-       // verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
-        loginPage.closeModalWindow();
+        //verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
+        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Vault wallet for account was not import : Already exist")))){
+            loginPage.closeModalWindow();
+        }
         loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
-
         log.info("Step 2: Click on Settings Button");
         loginPage.clickSettingsBtn()
                  .clickExportFileBtn()
@@ -721,6 +723,7 @@ public class TestLogin extends TestBase {
         wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser(),false));
         assertTrue(isPresent(testConfig.getVaultWallet().getUser(),true),"File not found");
         verifyNotifications(loginPage.getNotificationsMessages(),"Your account was successfully removed from this web node.");
+
         loginPage.clickSettingsBtn()
                 .clickExportFileBtn()
                 .enterAccountID(testConfig.getVaultWallet().getUser())
@@ -733,6 +736,7 @@ public class TestLogin extends TestBase {
 
 
      private void importSCFile(LoginPage loginPage, String accountID, String pass){
+
          log.info("Step : Click on Import Vault Wallet button");
          loginPage.clickImportVaultWalletBtn();
 

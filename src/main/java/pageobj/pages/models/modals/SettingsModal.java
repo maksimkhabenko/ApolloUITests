@@ -12,9 +12,10 @@ import java.util.Set;
 public class SettingsModal extends BasePage {
     @FindBy(xpath = "//*[contains(text(), 'Export Secret File')]")
     private Button exportFileBtn;
-    @FindBy(css = " .col-sm-9 input[placeholder='Account ID']")
+
+    @FindBy(css = ".col-sm-9 input[placeholder='Account ID']")
     private TextField accoutnIDField;
-    @FindBy(css = " .col-sm-9 input[placeholder='Secret Phrase']")
+    @FindBy(css = ".col-sm-9 input[placeholder='Secret Phrase']")
     private TextField passField;
     @FindBy(css = "button[class = 'btn absolute btn-right blue round round-top-left round-bottom-right']")
     private Button exportButton;

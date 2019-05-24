@@ -73,7 +73,7 @@ public class TestBase {
         }catch (Exception e){}
         finally {
             Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
-
+            notifications.forEach(Notification::click);
         }
     }
 

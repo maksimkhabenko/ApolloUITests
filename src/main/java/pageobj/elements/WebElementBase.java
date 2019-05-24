@@ -5,12 +5,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.pages.utils.CustomFieldDecorator;
 
 public class WebElementBase implements IWebElements {
     protected WebElement webElement;
-    protected WebDriver webDriver;
-    protected JavascriptExecutor executor;
+    private WebDriver webDriver;
+    private JavascriptExecutor executor;
+    private WebDriverWait wait;
 
     public WebElementBase(WebElement webElement) {
         this.webElement = webElement;
@@ -25,8 +28,11 @@ public class WebElementBase implements IWebElements {
     public void click(){
          if (webElement != null) {
              try {
-                 webElement.click();
+               //wait.until(ExpectedConditions.visibilityOfElementLocated(webElement));
+               wait.until(ExpectedConditions.elementToBeClickable(webElement));
+               webElement.click();
              }catch (Exception e){
+                 e.printStackTrace();
                  executor.executeScript("arguments[0].click();", webElement);
              }
 
@@ -37,7 +43,9 @@ public class WebElementBase implements IWebElements {
 
     public void writeText(String text){
         if (webElement !=null) {
-            click();
+            wait.until(ExpectedConditions.visibilityOf(webElement));
+            webElement.click();
+            webElement.clear();
             webElement.sendKeys(text);
         }
         else {
@@ -62,5 +70,6 @@ public class WebElementBase implements IWebElements {
     public void setDriver(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.executor = (JavascriptExecutor)webDriver;
+        this.wait = new WebDriverWait(webDriver,15);
     }
 }

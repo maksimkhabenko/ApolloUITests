@@ -58,8 +58,6 @@ public class LoginPage extends BasePage {
     private Button uploadFileBtn;
 
 
-
-
     @FindBy (css = "p.mb-3:nth-child(2) span")
     private Text secreatPhrase;
     @FindBy (css = "p.mb-3:nth-child(3) span")
@@ -92,7 +90,6 @@ public class LoginPage extends BasePage {
     }
 
     public void enterAccountID(String accountID) {
-        accountIdField.clear();
         accountIdField.writeText(accountID);
     }
 
