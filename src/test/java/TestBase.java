@@ -63,6 +63,7 @@ public class TestBase {
         }
     }
 
+
      void verifyNotifications(List<Notification> notifications, String expectedMessage){
 
         try {
@@ -70,6 +71,7 @@ public class TestBase {
         }catch (Exception e){}
         finally {
             Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+            notifications.forEach(Notification::click);
 
         }
     }

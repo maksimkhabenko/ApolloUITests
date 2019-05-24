@@ -18,7 +18,7 @@ public class WebElementBase implements IWebElements {
         this.webElement = webElement;
         PageFactory.initElements(new CustomFieldDecorator(webDriver),  this);
     }
-    protected void click(){
+    public void click(){
          if (webElement != null) {
              webElement.click();
          } else {
@@ -26,7 +26,7 @@ public class WebElementBase implements IWebElements {
          }
     }
 
-    protected void writeText(String text){
+    public void writeText(String text){
         if (webElement !=null) {
             click();
             webElement.sendKeys(text);
@@ -36,7 +36,7 @@ public class WebElementBase implements IWebElements {
         }
     }
 
-    protected String readText(){
+    public String readText(){
         if (webElement !=null) {
            return webElement.getText();
         }

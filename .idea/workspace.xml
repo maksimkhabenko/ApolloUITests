@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33c26fd6-69ef-4412-9af8-c037fd6079b4" name="Default Changelist" comment="added new tests">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestForging.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/APL-MK35-9X23-YQ5E-8QBKH" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/APL-MK35-9X23-YQ5E-8QBKH" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/junit-platform.properties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/junit-platform.properties.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,20 +27,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="86" column="39" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="39" />
+            <state relative-caret-position="157">
+              <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2547#2548#0" expanded="true" />
+                <element signature="e#2591#2592#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setUp#0;class#TestLogin#0" />
+                <element signature="method#testLogInBySecretPhrase#0;class#TestLogin#0" />
+                <element signature="method#testLogInByEmptyAccountIDNegative#0;class#TestLogin#0" />
+                <element signature="method#testLogOut#0;class#TestLogin#0" />
+                <element signature="method#testBackSpaceBtn#0;class#TestLogin#0" />
+                <element signature="method#testExitModalWindowBtn#0;class#TestLogin#0" />
+                <element signature="method#testCreateVaultWalletRandomlyGeneratedSecretPhrase#0;class#TestLogin#0" />
+                <element signature="method#testCreateVaultWalletVerifyStoreDataNegative#0;class#TestLogin#0" />
+                <element signature="method#testCreateVaultWalletCustomSecretPhrase#0;class#TestLogin#0" />
+                <element signature="method#testCreateVaultWalletInvalidSecretPhraseNegative#0;class#TestLogin#0" />
+                <element signature="method#testCreateStandardWallet#0;class#TestLogin#0" />
+                <element signature="method#testCreateStandardWalletInvalidSecretPhrase#0;class#TestLogin#0" />
+                <element signature="method#testCreateStandardWalletNegative#0;class#TestLogin#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestLogin.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestForging.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="341" column="4" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="4" />
+            <state relative-caret-position="1713">
+              <caret line="127" column="9" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,21 +76,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-745">
-              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+            <state relative-caret-position="17">
+              <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/LocatingCustomElementListHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state relative-caret-position="168">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,58 +115,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+            <state relative-caret-position="221">
+              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2758#2759#0" expanded="true" />
+                <element signature="e#2811#2812#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/conf/DriverFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="576">
+              <caret line="74" column="9" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+                <element signature="e#1561#1562#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1443#1444#0" expanded="true" />
+                <element signature="e#2318#2319#0" expanded="true" />
+                <element signature="e#2399#2400#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
+                <element signature="e#279#280#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/WrapperFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Constructor.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="200" column="52" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -129,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            <state relative-caret-position="219">
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,6 +196,7 @@
       <find>searchContext</find>
       <find>customSecretPhrase</find>
       <find>log.info</find>
+      <find>dashboardPage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,7 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/helpers/Hooks.java" />
         <option value="$PROJECT_DIR$/src/test/java/MyTest1.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/junit-platform.properties.properties" />
@@ -209,21 +245,22 @@
         <option value="$PROJECT_DIR$/src/main/java/elements/WebElementBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/NotificationContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.json" />
         <option value="$PROJECT_DIR$/src/test/java/DashboardPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/PageManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Text.java" />
         <option value="$PROJECT_DIR$/src/main/resources/info" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/models/Notification.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.json" />
+        <option value="$PROJECT_DIR$/src/test/java/TestForging.java" />
       </list>
     </option>
   </component>
@@ -231,7 +268,6 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -252,11 +288,6 @@
           <item name="ApolloUITests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Run Configurations" type="21c1f71a:MavenProjectsStructure$RunConfigurationsNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="ApolloUITests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
       </expand>
       <select />
     </treeState>
@@ -273,7 +304,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,6 +335,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pageobj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,27 +382,6 @@
               <item name="pageobj" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pageobj" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="modals" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ApolloUITests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pageobj" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ApolloUITests" type="b2602c69:ProjectViewProjectNode" />
@@ -390,13 +407,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="/media/mkhabenko/14C804DCC804BDCC/Work/Practice" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558701136037" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -431,51 +450,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.ApolloUITests [clean,test...]">
-    <configuration name="TestLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestForging">
+    <configuration name="TestForging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
+      <option name="MAIN_CLASS_NAME" value="TestForging" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testCreateStandardWallet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestForging.testForging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testCreateStandardWallet" />
+      <option name="MAIN_CLASS_NAME" value="TestForging" />
+      <option name="METHOD_NAME" value="testForging" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testCreateStandardWalletInvalidSecretPhrase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestForging.testForgingStandardWallet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testCreateStandardWalletInvalidSecretPhrase" />
+      <option name="MAIN_CLASS_NAME" value="TestForging" />
+      <option name="METHOD_NAME" value="testForgingStandardWallet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testCreateStandardWalletNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestForging.testForgingVaultWallet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testCreateStandardWalletNegative" />
+      <option name="MAIN_CLASS_NAME" value="TestForging" />
+      <option name="METHOD_NAME" value="testForgingVaultWallet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testCreateVaultWalletInvalidSecretPhraseNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestForging.testLogInBySecretPhrase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApolloUITests" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestLogin" />
-      <option name="METHOD_NAME" value="testCreateVaultWalletInvalidSecretPhraseNegative" />
+      <option name="MAIN_CLASS_NAME" value="TestForging" />
+      <option name="METHOD_NAME" value="testLogInBySecretPhrase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -509,20 +528,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestLogin" />
       <item itemvalue="Maven.ApolloUITests [clean,test...]" />
-      <item itemvalue="JUnit.TestLogin.testCreateStandardWallet" />
-      <item itemvalue="JUnit.TestLogin.testCreateStandardWalletInvalidSecretPhrase" />
-      <item itemvalue="JUnit.TestLogin.testCreateStandardWalletNegative" />
-      <item itemvalue="JUnit.TestLogin.testCreateVaultWalletInvalidSecretPhraseNegative" />
+      <item itemvalue="JUnit.TestForging.testLogInBySecretPhrase" />
+      <item itemvalue="JUnit.TestForging.testForging" />
+      <item itemvalue="JUnit.TestForging.testForgingVaultWallet" />
+      <item itemvalue="JUnit.TestForging.testForgingStandardWallet" />
+      <item itemvalue="JUnit.TestForging" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestLogin.testCreateVaultWalletInvalidSecretPhraseNegative" />
-        <item itemvalue="JUnit.TestLogin.testCreateStandardWalletNegative" />
-        <item itemvalue="JUnit.TestLogin.testCreateStandardWalletInvalidSecretPhrase" />
-        <item itemvalue="JUnit.TestLogin.testCreateStandardWallet" />
-        <item itemvalue="JUnit.TestLogin" />
+        <item itemvalue="JUnit.TestForging" />
+        <item itemvalue="JUnit.TestForging.testForgingVaultWallet" />
+        <item itemvalue="JUnit.TestForging.testForgingStandardWallet" />
+        <item itemvalue="JUnit.TestForging.testForging" />
+        <item itemvalue="JUnit.TestForging.testLogInBySecretPhrase" />
       </list>
     </recent_temporary>
   </component>
@@ -562,42 +581,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLogin_testLogInByEmptySecretPhraseNegative - 2019.05.22 at 18h 10m 33s.xml">
-      <configuration name="TestLogin.testLogInByEmptySecretPhraseNegative" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 12h 15m 37s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin - 2019.05.22 at 18h 58m 33s.xml">
-      <configuration name="TestLogin" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 12h 16m 58s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin - 2019.05.22 at 18h 58m 55s.xml">
-      <configuration name="TestLogin" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 12h 19m 25s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateVaultWalletInvalidSecretPhraseNegative - 2019.05.23 at 10h 53m 31s.xml">
-      <configuration name="TestLogin.testCreateVaultWalletInvalidSecretPhraseNegative" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 12h 20m 33s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateVaultWalletVerifyStoreDataNegative - 2019.05.23 at 10h 54m 25s.xml">
-      <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 12h 21m 28s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateVaultWalletVerifyStoreDataNegative - 2019.05.23 at 10h 55m 46s.xml">
-      <configuration name="TestLogin.testCreateVaultWalletVerifyStoreDataNegative" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 14h 33m 49s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin - 2019.05.23 at 10h 57m 52s.xml">
-      <configuration name="TestLogin" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 14h 50m 44s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateStandardWallet - 2019.05.23 at 11h 04m 06s.xml">
-      <configuration name="TestLogin.testCreateStandardWallet" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 15h 25m 03s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateStandardWalletInvalidSecretPhrase - 2019.05.23 at 11h 07m 30s.xml">
-      <configuration name="TestLogin.testCreateStandardWalletInvalidSecretPhrase" configurationId="JUnit" />
+    <history-entry file="TestForging_testForgingVaultWallet - 2019.05.24 at 15h 27m 47s.xml">
+      <configuration name="TestForging.testForgingVaultWallet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLogin_testCreateStandardWalletNegative - 2019.05.23 at 11h 12m 10s.xml">
-      <configuration name="TestLogin.testCreateStandardWalletNegative" configurationId="JUnit" />
+    <history-entry file="TestForging - 2019.05.24 at 15h 33m 08s.xml">
+      <configuration name="TestForging" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1931378" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -606,20 +625,20 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17602591" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40195015" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28509718" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32829374" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.15882678" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.15831557" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -630,18 +649,6 @@
     <MESSAGE value="Updated" />
     <MESSAGE value="added new tests" />
     <option name="LAST_COMMIT_MESSAGE" value="added new tests" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/TestBase.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/helpers/Hooks.java" />
@@ -660,13 +667,7 @@
     <entry file="file://$PROJECT_DIR$/ApolloUITests.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/3.5.0/webdrivermanager-3.5.0.jar!/io/github/bonigarcia/wdm/WebDriverManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/3.5.0/webdrivermanager-3.5.0.jar!/io/github/bonigarcia/wdm/WebDriverManager.class" />
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMyLogining3.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMyLogining5.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMyLogining.java" />
@@ -743,48 +744,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/info">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/IWebPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -795,37 +758,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/TextField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Text.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -848,17 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,19 +818,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Constructor.class" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="86" column="39" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/LocatingCustomElementListHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="136">
           <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -913,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/conf/DriverFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -923,7 +848,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/CustomFieldDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="595">
           <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -935,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/utils/WrapperFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="153">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -943,34 +868,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Constructor.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/IWebPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="200" column="52" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Text.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/models/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-745">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/elements/WebElementBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="168">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -979,8 +912,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="341" column="4" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="4" />
+        <state relative-caret-position="310">
+          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setUp#0;class#TestLogin#0" />
+            <element signature="method#testLogInBySecretPhrase#0;class#TestLogin#0" />
+            <element signature="method#testLogInByEmptyAccountIDNegative#0;class#TestLogin#0" />
+            <element signature="method#testLogOut#0;class#TestLogin#0" />
+            <element signature="method#testBackSpaceBtn#0;class#TestLogin#0" />
+            <element signature="method#testExitModalWindowBtn#0;class#TestLogin#0" />
+            <element signature="method#testCreateVaultWalletRandomlyGeneratedSecretPhrase#0;class#TestLogin#0" />
+            <element signature="method#testCreateVaultWalletVerifyStoreDataNegative#0;class#TestLogin#0" />
+            <element signature="method#testCreateVaultWalletCustomSecretPhrase#0;class#TestLogin#0" />
+            <element signature="method#testCreateVaultWalletInvalidSecretPhraseNegative#0;class#TestLogin#0" />
+            <element signature="method#testCreateStandardWallet#0;class#TestLogin#0" />
+            <element signature="method#testCreateStandardWalletInvalidSecretPhrase#0;class#TestLogin#0" />
+            <element signature="method#testCreateStandardWalletNegative#0;class#TestLogin#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="74" column="9" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2399#2400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+            <element signature="e#2811#2812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+            <element signature="e#2591#2592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageobj/pages/models/modals/UserProfileModal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestForging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1713">
+          <caret line="127" column="9" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
