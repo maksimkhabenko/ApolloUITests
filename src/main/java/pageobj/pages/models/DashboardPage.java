@@ -31,7 +31,6 @@ public class DashboardPage extends BasePage {
 
     private UserProfileModal userProfileModal;
 
-
     public DashboardPage(WebDriver driver) {
         super(driver);
     }

@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -696,12 +697,13 @@ public class TestLogin extends TestBase {
 
 
     @Test
-    @DisplayName("Export exisct secret file")
+    @DisplayName("Export/Import exisct secret file")
     void testExportSecretFile() {
         LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Precondition : Import and login");
         importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+       // verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
         loginPage.closeModalWindow();
         loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
 
@@ -710,19 +712,24 @@ public class TestLogin extends TestBase {
                  .clickExportFileBtn()
                  .enterAccountID(testConfig.getVaultWallet().getUser())
                  .enterPass(testConfig.getVaultWallet().getPass())
+                 .clickExportBtn()
+                 .deleteFile(true)
+                 .enterAccountID(testConfig.getVaultWallet().getUser())
+                 .enterPass(testConfig.getVaultWallet().getPass())
                  .clickExportBtn();
 
-        boolean isPresent = wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser()));
-        assertTrue(isPresent,"File not found");
+        wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser(),false));
+        assertTrue(isPresent(testConfig.getVaultWallet().getUser(),true),"File not found");
+        webDriver.navigate().refresh();
 
+        loginPage.clickSettingsBtn()
+                .clickExportFileBtn()
+                .enterAccountID(testConfig.getVaultWallet().getUser())
+                .enterPass(testConfig.getVaultWallet().getPass())
+                .clickExportBtn();
 
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
+        verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not get account information : Key for this account is not exist.");
+        
     }
 
 
@@ -753,19 +760,16 @@ public class TestLogin extends TestBase {
             loginPage.clickSubmitBtn();
     }
 
-    private boolean isPresent(String fileName){
+    private boolean isPresent(String fileName, boolean delete){
         boolean isPresent = false;
+
         File folder = new File(System.getProperty("user.home")+"/Downloads/");
         File[] listOfFiles = folder.listFiles();
-
         for (File file : listOfFiles) {
-            if (file.isFile()) {
-                if (file.getName().contains(fileName)) {
-                    file.delete();
-                    isPresent =true;
-                    break;
+                if (file.isFile() && file.getName().contains(fileName)) {
+                  if (delete) file.delete();
+                    isPresent = true;
                 }
-            }
         }
         return isPresent;
     }

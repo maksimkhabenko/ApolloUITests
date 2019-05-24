@@ -2,9 +2,12 @@ package pageobj.pages.models.modals;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Button;
 import pageobj.elements.models.TextField;
 import pageobj.pages.BasePage;
+
+import java.util.Set;
 
 public class SettingsModal extends BasePage {
     @FindBy(xpath = "//*[contains(text(), 'Export Secret File')]")
@@ -15,6 +18,11 @@ public class SettingsModal extends BasePage {
     private TextField passField;
     @FindBy(css = "button[class = 'btn absolute btn-right blue round round-top-left round-bottom-right']")
     private Button exportButton;
+
+    @FindBy(css = "a[class = 'btn danger static']")
+    private Button yesDeleteFileBtn;
+    @FindBy(css = "a[class = 'btn success static']")
+    private Button noDeleteFileBtn;
 
 
 
@@ -42,6 +50,15 @@ public class SettingsModal extends BasePage {
 
     public SettingsModal clickExportBtn(){
         exportButton.click();
+        return this;
+    }
+
+    public SettingsModal deleteFile(boolean yes){
+        if (yes){
+            yesDeleteFileBtn.click();
+        }else {
+            noDeleteFileBtn.click();
+        }
         return this;
     }
 }
