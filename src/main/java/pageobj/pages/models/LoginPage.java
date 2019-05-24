@@ -57,8 +57,7 @@ public class LoginPage extends BasePage {
     @FindBy (css = "input[type='file']")
     private Button uploadFileBtn;
 
-    @FindBy(className = "notification-message")
-    private List<Notification> notificationsMessages;
+
 
 
     @FindBy (css = "p.mb-3:nth-child(2) span")
@@ -74,11 +73,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void LoginToWallet(String accountID){
-        enterAccountID(accountID);
-        clickSubmitBtn();
-    }
-
     public void switchToNonActiveTab() {
         nonActiveBtn.click();
     }
@@ -87,6 +81,7 @@ public class LoginPage extends BasePage {
         password.clear();
         password.writeText(secretphrase);
     }
+
     public void enterCustomSecretPhrase(String secretphrase) {
         customSecretPhrase.clear();
         customSecretPhrase.writeText(secretphrase);
@@ -94,10 +89,6 @@ public class LoginPage extends BasePage {
 
     public void clickSubmitBtn() {
         submit.click();
-    }
-
-    public List<Notification> getNotificationsMessages() {
-        return notificationsMessages;
     }
 
     public void enterAccountID(String accountID) {
