@@ -720,9 +720,10 @@ public class TestLogin extends TestBase {
                  .enterPass(testConfig.getVaultWallet().getPass())
                  .clickExportBtn();
 
+        verifyNotifications(loginPage.getNotificationsMessages(),"Your account was successfully removed from this web node.");
+
         wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser(),false));
         assertTrue(isPresent(testConfig.getVaultWallet().getUser(),true),"File not found");
-        verifyNotifications(loginPage.getNotificationsMessages(),"Your account was successfully removed from this web node.");
 
         loginPage.clickSettingsBtn()
                 .clickExportFileBtn()
