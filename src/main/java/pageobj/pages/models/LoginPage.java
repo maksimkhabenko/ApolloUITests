@@ -1,5 +1,6 @@
 package pageobj.pages.models;
 
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.*;
 import pageobj.pages.BasePage;
 
+import java.io.File;
+import java.net.URL;
 import java.util.List;
 
 public class LoginPage extends BasePage {
@@ -54,9 +57,6 @@ public class LoginPage extends BasePage {
     @FindBy (css = "input[type='file']")
     private Button uploadFileBtn;
 
-    @FindBy(className = "notification-message")
-    private List<Notification> notificationsMessages;
-
 
     @FindBy (css = "p.mb-3:nth-child(2) span")
     private Text secreatPhrase;
@@ -71,11 +71,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void LoginToWallet(String accountID){
-        enterAccountID(accountID);
-        clickSubmitBtn();
-    }
-
     public void switchToNonActiveTab() {
         nonActiveBtn.click();
     }
@@ -84,6 +79,7 @@ public class LoginPage extends BasePage {
         password.clear();
         password.writeText(secretphrase);
     }
+
     public void enterCustomSecretPhrase(String secretphrase) {
         customSecretPhrase.clear();
         customSecretPhrase.writeText(secretphrase);
@@ -93,12 +89,7 @@ public class LoginPage extends BasePage {
         submit.click();
     }
 
-    public List<Notification> getNotificationsMessages() {
-        return notificationsMessages;
-    }
-
     public void enterAccountID(String accountID) {
-        accountIdField.clear();
         accountIdField.writeText(accountID);
     }
 
@@ -107,14 +98,8 @@ public class LoginPage extends BasePage {
     }
 
     public void closeModalWindow() {
-        try {
             closeModalWindowBtn.click();
-        } catch (Exception e){
-            executor.executeScript("arguments[0].click();", closeModalWindowBtn.getWebElement());
-        }
-
     }
-
 
     public void clickCreateAccountBtn() {
         createAccountBtn.click();
@@ -138,5 +123,18 @@ public class LoginPage extends BasePage {
 
     public void clickCheckBoxCustomSecretPhrase() {
         checkboxCustomSecretPhrase.setChecked(true);
+    }
+
+    public void clickImportVaultWalletBtn() {
+        importVaultWalletBtn.click();
+    }
+
+    public void importFile(String acoountID) {
+      URL url =   Test.class.getClassLoader().getResource(acoountID);
+        String path = url.getPath();
+        if (System.getProperty("os.name").contains("Win")){
+         path =  path.substring(1);
+        }
+      uploadFileBtn.getWebElement().sendKeys(path);
     }
 }

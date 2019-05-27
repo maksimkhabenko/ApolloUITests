@@ -1,12 +1,18 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
+import pageobj.pages.models.modals.SettingsModal;
 import pageobj.pages.models.modals.UserProfileModal;
 
+import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class TestLogin extends TestBase {
@@ -72,7 +78,7 @@ public class TestLogin extends TestBase {
         loginPage.clickSubmitBtn();
 
         log.info("Step 4: Verify User Account Rs");
-        dashboardPage.getUserAccountRs().equals(testConfig.getStandartWallet().getUser());
+        assertTrue(dashboardPage.getUserAccountRs().equals(testConfig.getStandartWallet().getUser()),"Verify User Account Rs");
 
         log.info("Step 5: Log out");
         dashboardPage.clickAccountIconBtn().clickLogoutBtn();
@@ -115,7 +121,7 @@ public class TestLogin extends TestBase {
     @Test
     @DisplayName("Log Out")
     @Order(3)
-    void testLogOut () throws Exception {
+    void testLogOut () {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         UserProfileModal userProfileModal;
@@ -202,19 +208,19 @@ public class TestLogin extends TestBase {
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //website.loginPage().verifyCreateStandardWallet();
 
         log.info("Step 4: Switch to Vault Wallet");
         loginPage.switchToNonActiveTab();
 
-       // log.info("Step 5: Verify Create new vault wallet page");
+       // log.test.txt("Step 5: Verify Create new vault wallet page");
         //website.loginPage().verifyCreateVaultWallet();
 
         log.info("Step 6: Press Create Account button");
         loginPage.clickCreateAccountBtn();
 
-        //log.info("Step 7: Verify Create New Vault Wallet Page (Second Step)");
+        //log.test.txt("Step 7: Verify Create New Vault Wallet Page (Second Step)");
         //website.loginPage().verifyCreateVaultWalletSecondStep();
 
         secretPhrase = loginPage.copySecretPhrase();
@@ -252,7 +258,7 @@ public class TestLogin extends TestBase {
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //website.loginPage().verifyCreateStandardWallet();
 
         log.info("Step 4: Switch to Vault Wallet");
@@ -264,7 +270,7 @@ public class TestLogin extends TestBase {
         log.info("Step 6: Press Create Account button");
         loginPage.clickCreateAccountBtn();
 
-        // log.info("Step 7: Verify Create New Vault Wallet Page (Second Step)");
+        // log.test.txt("Step 7: Verify Create New Vault Wallet Page (Second Step)");
         //loginPage.verifyCreateVaultWalletSecondStep();
 
         log.info("Step 8: Click on Next Button");
@@ -292,13 +298,13 @@ public class TestLogin extends TestBase {
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //website.loginPage().verifyCreateStandardWallet();
 
         log.info("Step 4: Switch to Vault Wallet");
         loginPage.switchToNonActiveTab();
 
-        //log.info("Step 5: Verify Create new vault wallet page");
+        //log.test.txt("Step 5: Verify Create new vault wallet page");
         //website.loginPage().verifyCreateVaultWallet();
 
         log.info("Step 6: Use custom secret phrase");
@@ -341,24 +347,24 @@ public class TestLogin extends TestBase {
     @DisplayName("NEGATIVE: VAULT WALLET -> Error message is present when User enter invalid secret phrase")
     @Order(12)
     void testCreateVaultWalletInvalidSecretPhraseNegative(){
-        LoginPage loginPage = getPage(LoginPage.class);;
+        LoginPage loginPage = getPage(LoginPage.class);
 
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //website.loginPage().verifyCreateStandardWallet();
 
         log.info("Step 4: Switch to Vault Wallet");
         loginPage.switchToNonActiveTab();
 
-        //log.info("Step 5: Verify Create new vault wallet page");
+        //log.test.txt("Step 5: Verify Create new vault wallet page");
         //website.loginPage().verifyCreateVaultWallet();
 
         log.info("Step 6: Press Create Account button");
         loginPage.clickCreateAccountBtn();
 
-        //log.info("Step 7: Verify Create New Vault Wallet Page (Second Step)");
+        //log.test.txt("Step 7: Verify Create New Vault Wallet Page (Second Step)");
         //website.loginPage().verifyCreateVaultWalletSecondStep();
         //Thread.sleep(2000);
 
@@ -443,13 +449,13 @@ public class TestLogin extends TestBase {
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //website.loginPage().verifyCreateStandardWallet();
 
         log.info("Step 4: Press Create Account button");
         loginPage.clickCreateAccountBtn();
 
-        //log.info("Step 5: Verify Create new user page (Second Step)");
+        //log.test.txt("Step 5: Verify Create new user page (Second Step)");
         //website.loginPage().verifyCreateStandardWalletSecondStep();
 
         log.info("Step 6: Click on CheckBox");
@@ -484,13 +490,13 @@ public class TestLogin extends TestBase {
         log.info("Step 2: Click on Create New User? button");
         loginPage.clickNewUserBtn();
 
-        //log.info("Step 3: Verify Create New User page");
+        //log.test.txt("Step 3: Verify Create New User page");
         //loginPage.verifyCreateStandardWallet();
 
         log.info("Step 4: Press Create Account button");
         loginPage.clickCreateAccountBtn();
 
-        //log.info("Step 5: Verify Create new user page (Second Step)");
+        //log.test.txt("Step 5: Verify Create new user page (Second Step)");
         //loginPage.verifyCreateStandardWalletSecondStep();
 
         log.info("Step 6: Click on Next Button");
@@ -498,8 +504,279 @@ public class TestLogin extends TestBase {
 
         log.info("Step 7: Error message is present");
         verifyNotifications(loginPage.getNotificationsMessages(),"You have to verify that you stored your private data.");
+
+    }
+
+    @Test
+    @DisplayName("Import Secret File")
+    @Order(16)
+    public void testImportFile(){
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        //log.test.txt("Step 4: Verify IMPORT ACCOUNT Page (SECRET KEY)");
+        //loginPage.verifyImportAccountSecretKeyPage();
+
+        log.info("Step 5: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        //log.test.txt("Step 6: Verify IMPORT ACCOUNT Page (SECRET FILE)");
+        //loginPage.verifyImportAccountSecretFilePage();
+
+        log.info("Step 7: Input Correct Secret Phrase");
+        loginPage.enterSecretPhrase(testConfig.getVaultWallet().getPass());
+
+        log.info("Step 8: Import correct file");
+        loginPage.importFile(testConfig.getVaultWallet().getUser());
+
+        log.info("Step 9: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify successful message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
+        verifyURL("login");
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Import valid Secret File + Invalid secret phrase")
+    @Order(17)
+    public void testImportInvalidSecretPhrase() {
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        //log.test.txt("Step 4: Verify IMPORT ACCOUNT Page (SECRET KEY)");
+        //loginPage.verifyImportAccountSecretKeyPage();
+
+        log.info("Step 5: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        //log.test.txt("Step 6: Verify IMPORT ACCOUNT Page (SECRET FILE)");
+        //loginPage.verifyImportAccountSecretFilePage();
+
+        log.info("Step 7: Input Invalid Secret Phrase");
+        loginPage.enterSecretPhrase("invalid secret phrase");
+
+        log.info("Step 8: Import correct file");
+        loginPage.importFile(testConfig.getVaultWallet().getUser());
+
+        log.info("Step 9: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify Error message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not import : KeyStore or passPhrase is not valid.");
+
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Restore Account with empty data: NO FILE and NO Secret Phrase")
+    @Order(18)
+    public void testImportEmptyData() {
+        LoginPage loginPage = getPage(LoginPage.class);
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        //log.test.txt("Step 4: Verify IMPORT ACCOUNT Page (SECRET KEY)");
+        //loginPage.verifyImportAccountSecretKeyPage();
+
+        log.info("Step 5: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        //log.test.txt("Step 6: Verify IMPORT ACCOUNT Page (SECRET FILE)");
+        //loginPage.verifyImportAccountSecretFilePage();
+
+        log.info("Step 7: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify Error message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"No file chosen");
+
+        loginPage.closeModalWindow();
+
+        verifyURL("login");
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Import INVALID Secret File + VALID secret phrase")
+    @Order(19)
+    public void testImportInvalidSecretFile() {
+        LoginPage loginPage = getPage(LoginPage.class);
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        //log.test.txt("Step 4: Verify IMPORT ACCOUNT Page (SECRET KEY)");
+        //loginPage.verifyImportAccountSecretKeyPage();
+        log.info("Step 5: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        //log.test.txt("Step 6: Verify IMPORT ACCOUNT Page (SECRET FILE)");
+        //loginPage.verifyImportAccountSecretFilePage();
+
+        log.info("Step 7: Input Invalid Secret Phrase");
+        loginPage.enterSecretPhrase("22");
+
+        log.info("Step 8: Import correct file");
+        loginPage.importFile(testConfig.getVaultWallet().getUser());
+
+        log.info("Step 9: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify Error message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not import : KeyStore or passPhrase is not valid.");
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Import Wrong Format Secret File + VALID secret phrase")
+    @Order(20)
+    public void testImportSecretFileWrongFormat(){
+        LoginPage loginPage = getPage(LoginPage.class);
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        log.info("Step 4: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        log.info("Step 5: Input valid Secret Phrase");
+        loginPage.enterSecretPhrase("1");
+
+        log.info("Step 6: Import correct file");
+        loginPage.importFile("test.txt");
+
+        log.info("Step 7: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 8: Verify Error message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not import : Parameter 'passPhrase' or 'keyStore' is null");
+
+    }
+
+    @Test
+    @DisplayName("NEGATIVE: Import Big Size Secret File + VALID secret phrase")
+    @Order(21)
+    public void testImportBigSizeSecretFile() {
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Step 2: Delete file if it exists");
+        apiConnector.deleteSecretFile(testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        log.info("Step 3: Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        log.info("Step 5: Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        log.info("Step 7: Input Invalid Secret Phrase");
+        loginPage.enterSecretPhrase("11");
+
+        log.info("Step 8: Import correct file");
+        loginPage.importFile("test.jpg");
+
+        log.info("Step 9: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+
+        log.info("Step 10: Verify Error message");
+        verifyNotifications(loginPage.getNotificationsMessages(),"error_secret_file_too_big");
     }
 
 
+    @Test
+    @DisplayName("Export/Import exisct secret file")
+    @RepeatedTest(10)
+    void testExportSecretFile() {
+        LoginPage loginPage = getPage(LoginPage.class);
+
+        log.info("Precondition : Import and login");
+        importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+        //verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
+        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Vault wallet for account was not import : Already exist")))){
+            loginPage.closeModalWindow();
+        }
+        loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
+        log.info("Step 2: Click on Settings Button");
+        loginPage.clickSettingsBtn()
+                 .clickExportFileBtn()
+                 .enterAccountID(testConfig.getVaultWallet().getUser())
+                 .enterPass(testConfig.getVaultWallet().getPass())
+                 .clickExportBtn()
+                 .deleteFile(true)
+                 .enterAccountID(testConfig.getVaultWallet().getUser())
+                 .enterPass(testConfig.getVaultWallet().getPass())
+                 .clickExportBtn();
+
+        verifyNotifications(loginPage.getNotificationsMessages(),"Your account was successfully removed from this web node.");
+
+        wait.until((ExpectedCondition<Boolean>) file -> isPresent(testConfig.getVaultWallet().getUser(),false));
+        assertTrue(isPresent(testConfig.getVaultWallet().getUser(),true),"File not found");
+
+        loginPage.clickSettingsBtn()
+                .clickExportFileBtn()
+                .enterAccountID(testConfig.getVaultWallet().getUser())
+                .enterPass(testConfig.getVaultWallet().getPass())
+                .clickExportBtn();
+
+        verifyNotifications(loginPage.getNotificationsMessages(),"Vault wallet for account was not get account information : Key for this account is not exist.");
+
+    }
+
+
+     private void importSCFile(LoginPage loginPage, String accountID, String pass){
+
+         log.info("Step : Click on Import Vault Wallet button");
+         loginPage.clickImportVaultWalletBtn();
+
+         log.info("Step : Switch to SECRET FILE IMPORT");
+         loginPage.switchToNonActiveTab();
+
+         log.info("Step: Input Invalid Secret Phrase");
+         loginPage.enterSecretPhrase(pass);
+
+         log.info("Step: Import correct file");
+         loginPage.importFile(accountID);
+
+         log.info("Step: Click on RESTORE ACCOUNT button");
+         loginPage.clickSubmitBtn();
+     }
+
+
+    private void loginToWallet(LoginPage loginPage, String accountId){
+
+            log.info("Step : Log In by Account ID");
+            loginPage.enterAccountID(accountId.substring(3));
+
+            log.info("Step : Click on Submit Button");
+            loginPage.clickSubmitBtn();
+    }
+
+    private boolean isPresent(String fileName, boolean delete){
+        boolean isPresent = false;
+
+        File folder = new File(System.getProperty("user.home")+"/Downloads/");
+        File[] listOfFiles = folder.listFiles();
+        for (File file : listOfFiles) {
+                if (file.isFile() && file.getName().contains(fileName)) {
+                  if (delete) file.delete();
+                    isPresent = true;
+                }
+        }
+        return isPresent;
+    }
 
 }
