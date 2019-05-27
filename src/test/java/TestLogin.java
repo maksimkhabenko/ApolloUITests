@@ -70,6 +70,7 @@ public class TestLogin extends TestBase {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
 
+
         log.info("Step 2: Log In by Account ID");
         loginPage.enterAccountID(testConfig.getStandartWallet().getUser().substring(3));
 
@@ -135,7 +136,7 @@ public class TestLogin extends TestBase {
         loginPage.clickSubmitBtn();
 
         log.info("Step 5: Press on Account Icon");
-         userProfileModal = dashboardPage.clickAccountIconBtn();
+        userProfileModal = dashboardPage.clickAccountIconBtn();
 
         log.info("Step 6: Click on Log out button");
         userProfileModal.clickLogoutBtn();

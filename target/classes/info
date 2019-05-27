@@ -1,0 +1,5 @@
+        wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return loginPage.getNotificationTitle().equals("Error");
+            }
+        });

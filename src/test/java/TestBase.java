@@ -66,6 +66,7 @@ public class TestBase {
         }
     }
 
+
      void verifyNotifications(List<Notification> notifications, String expectedMessage){
 
         try {
@@ -76,7 +77,6 @@ public class TestBase {
             notifications.forEach(Notification::click);
         }
     }
-
 
 
     protected  <T> T getPage(Class<T> clazz){
