@@ -1,7 +1,10 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -699,7 +702,6 @@ public class TestLogin extends TestBase {
 
     @Test
     @DisplayName("Export/Import exisct secret file")
-    @RepeatedTest(10)
     void testExportSecretFile() {
         LoginPage loginPage = getPage(LoginPage.class);
 
@@ -711,12 +713,13 @@ public class TestLogin extends TestBase {
         }
         loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
         log.info("Step 2: Click on Settings Button");
-        loginPage.clickSettingsBtn()
+        SettingsModal  settingsModal =  loginPage.clickSettingsBtn()
                  .clickExportFileBtn()
                  .enterAccountID(testConfig.getVaultWallet().getUser())
                  .enterPass(testConfig.getVaultWallet().getPass())
                  .clickExportBtn()
                  .deleteFile(true)
+                //Add wait for delete
                  .enterAccountID(testConfig.getVaultWallet().getUser())
                  .enterPass(testConfig.getVaultWallet().getPass())
                  .clickExportBtn();

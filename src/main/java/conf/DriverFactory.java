@@ -1,17 +1,18 @@
 package conf;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import static conf.DriverType.CHROME;
+import static conf.DriverType.FIREFOX;
 
 public class DriverFactory {
-    DriverType driverType = CHROME;
+    private DriverType driverType = CHROME;
 
     public DriverFactory() {
         String browser = System.getProperty("browser", driverType.toString()).toUpperCase();
-        System.out.println("------------------------"+browser);
         try {
-            if (browser != null && !browser.equals("")) {
+            if (!browser.equals("")) {
                 driverType = DriverType.valueOf(browser);
             }
         } catch (IllegalArgumentException ignored) {

@@ -16,8 +16,16 @@ public enum DriverType implements DriverSetup {
 
     FIREFOX {
         public WebDriver getWebDriver() {
+            FirefoxOptions options = new FirefoxOptions();
+
+            options.addPreference("browser.download.folderList", 2);
+            options.addPreference("browser.download.dir", System.getProperty("user.home")+"/Downloads/");
+            options.addPreference("browser.download.useDownloadDir", true);
+            options.addPreference("browser.helperApps.neverAsk.saveToDisk","application/octet-stream");
+            options.addPreference("pdfjs.disabled", true);
             WebDriverManager.firefoxdriver().setup();
-            return new FirefoxDriver();
+
+            return new FirefoxDriver(options);
         }
     },
     CHROME {

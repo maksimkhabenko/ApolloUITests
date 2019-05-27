@@ -26,10 +26,10 @@ public class WebElementBase implements IWebElements {
     }
 
     public void click(){
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
          if (webElement != null) {
              try {
-               wait.until(ExpectedConditions.visibilityOf(webElement));
-               wait.until(ExpectedConditions.elementToBeClickable(webElement));
                webElement.click();
              }catch (Exception e){
                  e.printStackTrace();

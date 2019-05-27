@@ -38,7 +38,6 @@ public class SettingsModal extends BasePage {
     }
 
     public SettingsModal enterAccountID(String accoutnID){
-        accoutnIDField.clear();
         accoutnIDField.writeText(accoutnID);
         return this;
     }

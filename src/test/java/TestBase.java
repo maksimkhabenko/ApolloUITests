@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
@@ -34,7 +35,6 @@ public class TestBase {
 
     static TestConfig testConfig;
     static Logger log = Logger.getLogger(TestBase.class.getName());
-
     private static String baseUrl;
 
     @BeforeAll
@@ -71,10 +71,13 @@ public class TestBase {
 
         try {
             wait.until((ExpectedCondition<Boolean>) d -> notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
-        }catch (Exception e){}
+        }catch (Exception e){        }
         finally {
-            Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
-            notifications.forEach(Notification::click);
+            if (notifications.size() > 0) {
+                Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+                notifications.forEach(Notification::click);
+            }
+
         }
     }
 

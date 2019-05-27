@@ -84,7 +84,7 @@ public class TestForging extends TestBase {
     @Test
     @DisplayName("Start/Stop Forging on Vault wallet")
     @Order(2)
-    void testForgingVaultWallet () throws InterruptedException {
+    void testForgingVaultWallet ()  {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         String oldForgingStatus;
@@ -107,7 +107,7 @@ public class TestForging extends TestBase {
 
         log.info("Step 6: Click General Settings");
         dashboardPage.clickGeneralSettings();
-        Thread.sleep(3000);
+        
         oldForgingStatus = dashboardPage.getForgingStatus();
 
         log.info("Step 7: Click on FORGING button and enter PASSWORD");
