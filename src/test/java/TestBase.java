@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.Notification;
+import pageobj.pages.models.LoginPage;
 import utils.APIConnector;
 
 import java.util.List;
@@ -94,5 +95,34 @@ public class TestBase {
     @AfterAll
     static void afterAll() {
 
+    }
+
+
+     void importSCFile(LoginPage loginPage, String accountID, String pass){
+
+        log.info("Step : Click on Import Vault Wallet button");
+        loginPage.clickImportVaultWalletBtn();
+
+        log.info("Step : Switch to SECRET FILE IMPORT");
+        loginPage.switchToNonActiveTab();
+
+        log.info("Step: Input Invalid Secret Phrase");
+        loginPage.enterSecretPhrase(pass);
+
+        log.info("Step: Import correct file");
+        loginPage.importFile(accountID);
+
+        log.info("Step: Click on RESTORE ACCOUNT button");
+        loginPage.clickSubmitBtn();
+    }
+
+
+     void loginToWallet(LoginPage loginPage, String accountId){
+
+        log.info("Step : Log In by Account ID");
+        loginPage.enterAccountID(accountId.substring(3));
+
+        log.info("Step : Click on Submit Button");
+        loginPage.clickSubmitBtn();
     }
 }

@@ -3,6 +3,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
@@ -32,7 +33,7 @@ public class TestForging extends TestBase {
     @Test
     @DisplayName("Start/Stop Forging on Standard wallet")
     @Order(1)
-    void testForgingStandardWallet () throws InterruptedException {
+    void testForgingStandardWallet ()  {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
         String oldForgingStatus;
@@ -52,28 +53,33 @@ public class TestForging extends TestBase {
 
         log.info("Step 6: Verify Effective Balance");
         dashboardPage.openAccountDetails();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("tr:nth-child(6) td:last-child")));
-        assertTrue(Double.valueOf(dashboardPage.getEffectiveBalance().replaceAll("Apollo", "").trim())>1000);
+
+        assertTrue(Double.parseDouble(dashboardPage.getEffectiveBalance().replaceAll("Apollo", "").trim())>1000);
         loginPage.closeModalWindow();
 
         log.info("Step 7: Click General Settings");
         dashboardPage.clickGeneralSettings();
-        Thread.sleep(3000);
         oldForgingStatus = dashboardPage.getForgingStatus();
 
         log.info("Step 8: Click on FORGING button");
         dashboardPage.clickForging();
-        wait.until(ExpectedConditions.invisibilityOfElementWithText(By.cssSelector("div[class=\"input-section p-0\"] a label"), oldForgingStatus));
-        newForgingStatus = dashboardPage.getForgingStatus();
 
-        log.info("Step 9: Verify Status has been changed");
-        assertNotEquals(oldForgingStatus, newForgingStatus);
+        try {
+            wait.until((ExpectedCondition<Boolean>) d -> !dashboardPage.getForgingStatus().equals(oldForgingStatus));
+        }catch (Exception ignored) {
+        }finally {
+            newForgingStatus = dashboardPage.getForgingStatus();
+            log.info("Step 9: Verify Status has been changed");
+            assertNotEquals(oldForgingStatus, newForgingStatus);
+        }
 
         log.info("Step 10: ");
         if (newForgingStatus.equals("Forging"))
         {
             dashboardPage.clickForging();
-            wait.until(ExpectedConditions.invisibilityOfElementWithText(By.cssSelector("div[class=\"input-section p-0\"] a label"), newForgingStatus));
+            try {
+                wait.until((ExpectedCondition<Boolean>) d -> !dashboardPage.getForgingStatus().equals("Forging"));
+            }catch (Exception ignored){}
         }
 
         log.info("Step 11: Log Out");
@@ -90,41 +96,52 @@ public class TestForging extends TestBase {
         String oldForgingStatus;
         String newForgingStatus;
 
+        importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
+
+        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Vault wallet for account was not import : Already exist")))){
+            loginPage.closeModalWindow();
+        }
+
         log.info("Step 2: Enter Account ID -> Vault Wallet");
-        loginPage.enterAccountID(testConfig.getVaultWallet().getUser().substring(3));
+        loginToWallet(loginPage,testConfig.getVaultWallet().getUser());
 
-        log.info("Step 3: Click on Submit Button");
-        loginPage.clickSubmitBtn();
-
-        log.info("Step 4: Check URL = dashboard");
+        log.info("Step 3: Check URL = dashboard");
         verifyURL("dashboard");
 
-        log.info("Step 5: Verify Effective Balance");
+        log.info("Step 4: Verify Effective Balance");
         dashboardPage.openAccountDetails();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("tr:nth-child(6) td:last-child")));
-        assertTrue(Double.valueOf(dashboardPage.getEffectiveBalance().replaceAll("Apollo", "").trim())>1000);
+        //wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("tr:nth-child(6) td:last-child")));
+        try {
+            wait.until((ExpectedCondition<Boolean>) d -> Double.parseDouble(dashboardPage.getEffectiveBalance().replaceAll("Apollo", "").trim())>1000);
+        }catch (Exception ignored){}
+        assertTrue(Double.parseDouble(dashboardPage.getEffectiveBalance().replaceAll("Apollo", "").trim())>1000);
         loginPage.closeModalWindow();
 
-        log.info("Step 6: Click General Settings");
+        log.info("Step 5: Click General Settings");
         dashboardPage.clickGeneralSettings();
         
         oldForgingStatus = dashboardPage.getForgingStatus();
 
-        log.info("Step 7: Click on FORGING button and enter PASSWORD");
+        log.info("Step 6: Click on FORGING button and enter PASSWORD");
         dashboardPage.clickForging();
         loginPage.enterSecretPhrase(testConfig.getVaultWallet().getPass());
         loginPage.clickNextBtn();
-        wait.until(ExpectedConditions.invisibilityOfElementWithText(By.cssSelector("div[class=\"input-section p-0\"] a label"), oldForgingStatus));
+
+        try {
+            wait.until((ExpectedCondition<Boolean>) d -> !dashboardPage.getForgingStatus().equals(oldForgingStatus));
+        }catch (Exception ignored){}
+
         newForgingStatus = dashboardPage.getForgingStatus();
 
-        log.info("Step 8: Verify Status has been changed");
+        log.info("Step 7: Verify Status has been changed");
         assertNotEquals(oldForgingStatus, newForgingStatus);
 
-        log.info("Step 9: Change Forging Status to NOT FORGING");
         if (newForgingStatus.equals("Forging"))
         {
             dashboardPage.clickForging();
-            wait.until(ExpectedConditions.invisibilityOfElementWithText(By.cssSelector("div[class=\"input-section p-0\"] a label"), newForgingStatus));
+            try {
+                wait.until((ExpectedCondition<Boolean>) d -> !dashboardPage.getForgingStatus().equals("Forging"));
+            }catch (Exception ignored){}
         }
 
     }

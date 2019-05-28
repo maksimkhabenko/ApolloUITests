@@ -32,7 +32,7 @@ public class WebElementBase implements IWebElements {
              try {
                webElement.click();
              }catch (Exception e){
-                 e.printStackTrace();
+                // e.printStackTrace();
                  executor.executeScript("arguments[0].click();", webElement);
              }
 
@@ -42,8 +42,8 @@ public class WebElementBase implements IWebElements {
     }
 
     public void writeText(String text){
+        wait.until(ExpectedConditions.visibilityOf(webElement));
         if (webElement !=null) {
-            wait.until(ExpectedConditions.visibilityOf(webElement));
             webElement.click();
             webElement.clear();
             webElement.sendKeys(text);
@@ -54,6 +54,7 @@ public class WebElementBase implements IWebElements {
     }
 
     public String readText(){
+        wait.until(ExpectedConditions.visibilityOf(webElement));
         if (webElement !=null) {
            return webElement.getText();
         }

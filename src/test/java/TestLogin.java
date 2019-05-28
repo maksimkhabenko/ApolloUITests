@@ -740,33 +740,6 @@ public class TestLogin extends TestBase {
     }
 
 
-     private void importSCFile(LoginPage loginPage, String accountID, String pass){
-
-         log.info("Step : Click on Import Vault Wallet button");
-         loginPage.clickImportVaultWalletBtn();
-
-         log.info("Step : Switch to SECRET FILE IMPORT");
-         loginPage.switchToNonActiveTab();
-
-         log.info("Step: Input Invalid Secret Phrase");
-         loginPage.enterSecretPhrase(pass);
-
-         log.info("Step: Import correct file");
-         loginPage.importFile(accountID);
-
-         log.info("Step: Click on RESTORE ACCOUNT button");
-         loginPage.clickSubmitBtn();
-     }
-
-
-    private void loginToWallet(LoginPage loginPage, String accountId){
-
-            log.info("Step : Log In by Account ID");
-            loginPage.enterAccountID(accountId.substring(3));
-
-            log.info("Step : Click on Submit Button");
-            loginPage.clickSubmitBtn();
-    }
 
     private boolean isPresent(String fileName, boolean delete){
         boolean isPresent = false;
