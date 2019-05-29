@@ -49,7 +49,7 @@ public class TestBase {
      void setUp() {
         this.apiConnector = new APIConnector(testConfig);
         this.webDriver = driverFactory.getDriver();
-        this.wait = new WebDriverWait(webDriver,15);
+        this.wait = new WebDriverWait(webDriver,120);
         this.webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         this.webDriver.manage().window().maximize();
         this.webDriver.get(baseUrl);
@@ -71,11 +71,11 @@ public class TestBase {
      void verifyNotifications(List<Notification> notifications, String expectedMessage){
 
         try {
-            wait.until((ExpectedCondition<Boolean>) d -> notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+            wait.until((ExpectedCondition<Boolean>) d -> notifications.stream().anyMatch(msg -> (msg.getMessage().equals(expectedMessage))));
         }catch (Exception e){        }
         finally {
             if (notifications.size() > 0) {
-                Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMeassage().equals(expectedMessage))));
+                Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMessage().equals(expectedMessage))));
                 notifications.forEach(Notification::click);
             }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageobj.elements.models.Button;
 import pageobj.pages.IWebPage;
+import pageobj.pages.models.modals.SendMoneyModal;
 import pageobj.pages.models.modals.UserProfileModal;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.Button;
@@ -22,6 +23,17 @@ public abstract class BasePage implements IWebPage {
     @FindBy(css = "div[class='user-box']")
     private Button accountIconBtn;
     private UserProfileModal userProfileModal;
+    protected SendMoneyModal sendMoneyModal;
+    @FindBy (css = "i[class=\"zmdi zmdi-balance-wallet\"]")
+    private Button sendMoneyBtnHeader;
+
+    public SendMoneyModal clickSendMoneyFromHeader() {
+        sendMoneyBtnHeader.click();
+        if (sendMoneyModal == null) {
+            sendMoneyModal = new SendMoneyModal(driver);
+        }
+        return sendMoneyModal;
+    }
 
 
     public UserProfileModal clickAccountIconBtn() {

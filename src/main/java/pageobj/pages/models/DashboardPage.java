@@ -1,12 +1,19 @@
 package pageobj.pages.models;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageobj.elements.models.Button;
 import pageobj.elements.models.Notification;
 import pageobj.elements.models.Text;
+import pageobj.elements.models.TextField;
 import pageobj.pages.BasePage;
+import pageobj.pages.models.modals.SendMoneyModal;
+import pageobj.pages.models.modals.UserProfileModal;
+
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -31,8 +38,43 @@ public class DashboardPage extends BasePage {
     @FindBy (css = "tr:nth-child(6) td:last-child")
     private Text effectiveBalance;
 
+    @FindBy (xpath = "//button[contains(text(),'Send')]")
+    private Button sendMoneyBtn;
+
+    @FindBy (css = "a[class = 'transaction-item']")
+    private List<Text> myTransactionsInfo;
+
+    @FindBy (xpath = "//input[@placeholder='Account ID']")
+    private TextField sendMoneyRecipientAccountId;
+
+    @FindBy (xpath = "//input[@placeholder='Amount']")
+    private TextField sendMoneyAmountAtm;
+
+    @FindBy (xpath = "//input[@placeholder='Fee']")
+    private TextField sendMoneyFee;
+
     public DashboardPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void enterSendMoneyData (String recipientAccountId, String amountAtm, String feeAtm) {
+        sendMoneyRecipientAccountId.writeText(recipientAccountId);
+        sendMoneyAmountAtm.writeText(amountAtm);
+        sendMoneyFee.writeText(feeAtm);
+    }
+
+
+
+    public String getLastTransactionAmount(int index){
+        return myTransactionsInfo.get(index).getWebElement().findElement(By.className("transaction-amount")).getText();
+    }
+
+    public SendMoneyModal clickSendMoneyFromDashboard() {
+        sendMoneyBtn.click();
+        if (sendMoneyModal == null) {
+            sendMoneyModal = new SendMoneyModal(driver);
+        }
+        return sendMoneyModal;
     }
 
     public String getAmount() {
@@ -52,13 +94,7 @@ public class DashboardPage extends BasePage {
     }
 
     public void clickForging() {
-        try {
             forging.click();
-        }
-        catch (Exception a) {
-            executor.executeScript("arguments[0].click();", forging.getWebElement());
-        }
-
     }
 
     public String getUserAccountRs() {

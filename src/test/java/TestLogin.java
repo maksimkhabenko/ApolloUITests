@@ -1,10 +1,5 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -25,7 +20,7 @@ public class TestLogin extends TestBase {
     void setUp() {
         super.setUp();
         List<Notification> notifications = getPage(LoginPage.class).getNotificationsMessages();
-        if (notifications.size() > 0 && notifications.get(0).getMeassage().equals("You are using up to date version")){
+        if (notifications.size() > 0 && notifications.get(0).getMessage().equals("You are using up to date version")){
             notifications.get(0).click();
         }
 
@@ -708,7 +703,7 @@ public class TestLogin extends TestBase {
         log.info("Precondition : Import and login");
         importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
         //verifyNotifications(loginPage.getNotificationsMessages(),"Your account imported successfully!");
-        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Vault wallet for account was not import : Already exist")))){
+        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMessage().equals("Vault wallet for account was not import : Already exist")))){
             loginPage.closeModalWindow();
         }
         loginToWallet(loginPage,testConfig.getVaultWallet().getUser());

@@ -15,7 +15,7 @@ public class Notification extends WebElementBase {
         return webElement.findElement(By.className("title")).getText();
     }
 
-    public String getMeassage(){
+    public String getMessage(){
         return webElement.findElement(new By.ByClassName("message")).getText();
     }
 

@@ -1,18 +1,10 @@
-import org.junit.Assert;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
-import pageobj.pages.models.modals.UserProfileModal;
 
-import java.sql.Driver;
 import java.util.List;
-import java.util.concurrent.TransferQueue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +16,7 @@ public class TestForging extends TestBase {
     void setUp() {
         super.setUp();
         List<Notification> notifications = getPage(LoginPage.class).getNotificationsMessages();
-        if (notifications.size() > 0 && notifications.get(0).getMeassage().equals("You are using up to date version")){
+        if (notifications.size() > 0 && notifications.get(0).getMessage().equals("You are using up to date version")){
             notifications.get(0).click();
         }
 
@@ -98,7 +90,7 @@ public class TestForging extends TestBase {
 
         importSCFile(loginPage,testConfig.getVaultWallet().getUser(),testConfig.getVaultWallet().getPass());
 
-        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMeassage().equals("Vault wallet for account was not import : Already exist")))){
+        if (loginPage.getNotificationsMessages().stream().anyMatch(msg -> (msg.getMessage().equals("Vault wallet for account was not import : Already exist")))){
             loginPage.closeModalWindow();
         }
 
