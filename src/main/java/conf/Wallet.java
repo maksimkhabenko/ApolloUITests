@@ -1,5 +1,7 @@
 package conf;
 
+import java.io.Serializable;
+
 public class Wallet {
     private String user;
     private String pass;

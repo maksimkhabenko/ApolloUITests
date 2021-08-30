@@ -1,6 +1,5 @@
 import conf.DriverFactory;
 import conf.TestConfig;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
@@ -40,7 +38,7 @@ public class TestBase {
 
     @BeforeAll
     @ResourceLock(value = SYSTEM_PROPERTIES, mode = READ_WRITE)
-    static void beforAll() {
+    static void beforeAll() {
         testConfig = TestConfig.getTestConfig();
         baseUrl = testConfig.getHost();
     }
@@ -63,7 +61,8 @@ public class TestBase {
         }
          finally {
             String msg = "Verify current url: " + pageName + " but current page: "+webDriver.getCurrentUrl();
-            Assert.assertTrue( msg,webDriver.getCurrentUrl().contains(pageName));
+            assertTrue( webDriver.getCurrentUrl().contains(pageName),msg);
+
         }
     }
 
@@ -75,7 +74,7 @@ public class TestBase {
         }catch (Exception e){        }
         finally {
             if (notifications.size() > 0) {
-                Assert.assertTrue(notifications.stream().anyMatch(msg -> (msg.getMessage().equals(expectedMessage))));
+                assertTrue(notifications.stream().anyMatch(msg -> (msg.getMessage().equals(expectedMessage))));
                 notifications.forEach(Notification::click);
             }
 

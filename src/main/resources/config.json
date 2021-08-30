@@ -1,6 +1,6 @@
 {
-  "host":"http://localhost:7876",
-  "adminPassword":"1",
+  "host":"http://51.15.235.41:7876",
+  "adminPass":"1",
   "chainID":"a2e9b9",
 
   "standartWallet":

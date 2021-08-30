@@ -1,7 +1,5 @@
-import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
@@ -9,7 +7,9 @@ import pageobj.pages.models.modals.SendMoneyModal;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled
 public class TestSendMoney extends TestBase {
 
     @Override
@@ -120,9 +120,9 @@ public class TestSendMoney extends TestBase {
         sendMoneyModal = dashboardPage.clickSendMoneyFromDashboard();
 
         log.info("Step 7: Check data is already filled by information");
-        Assert.assertTrue(sendMoneyModal.getAccountIdFromSendMoneyModal().equals(testConfig.getStandartWallet().getUser()));
-        Assert.assertTrue(sendMoneyModal.getAmountAtmFromSendMoneyModal().equals(amountAtm));
-        Assert.assertTrue(sendMoneyModal.getFeeAtmFromSendMoneyModal().equals(feeAtm));
+        assertTrue(sendMoneyModal.getAccountIdFromSendMoneyModal().equals(testConfig.getStandartWallet().getUser()));
+        assertTrue(sendMoneyModal.getAmountAtmFromSendMoneyModal().equals(amountAtm));
+        assertTrue(sendMoneyModal.getFeeAtmFromSendMoneyModal().equals(feeAtm));
 
     }
 

@@ -1,19 +1,15 @@
 package pageobj.pages.models;
 
-import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobj.elements.models.*;
 import pageobj.pages.BasePage;
 
-import java.io.File;
 import java.net.URL;
-import java.util.List;
 
 public class LoginPage extends BasePage {
+
 
     @FindBy(className = "btn")
     private Button submit;
@@ -89,6 +85,7 @@ public class LoginPage extends BasePage {
         submit.click();
     }
 
+    @Step("Log In by Account ID")
     public void enterAccountID(String accountID) {
         accountIdField.writeText(accountID);
     }
@@ -130,7 +127,7 @@ public class LoginPage extends BasePage {
     }
 
     public void importFile(String acoountID) {
-      URL url =   Test.class.getClassLoader().getResource(acoountID);
+      URL url =   BasePage.class.getClassLoader().getResource(acoountID);
         String path = url.getPath();
         if (System.getProperty("os.name").contains("Win")){
          path =  path.substring(1);
