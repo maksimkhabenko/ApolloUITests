@@ -85,7 +85,6 @@ public class LoginPage extends BasePage {
         submit.click();
     }
 
-    @Step("Log In by Account ID")
     public void enterAccountID(String accountID) {
         accountIdField.writeText(accountID);
     }

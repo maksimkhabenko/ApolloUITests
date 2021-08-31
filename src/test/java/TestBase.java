@@ -1,12 +1,17 @@
 import conf.DriverFactory;
 import conf.TestConfig;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import io.qameta.allure.Attachment;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
+import org.junit.platform.launcher.TestExecutionListener;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,7 +31,8 @@ import static org.openqa.selenium.support.PageFactory.*;
 
 
 @Execution(ExecutionMode.CONCURRENT)
-public class TestBase {
+@ExtendWith(TestListener.class)
+public  class TestBase  {
     WebDriverWait wait;
     DriverFactory driverFactory = new DriverFactory();
     WebDriver webDriver;
@@ -35,6 +41,8 @@ public class TestBase {
     static TestConfig testConfig;
     static Logger log = Logger.getLogger(TestBase.class.getName());
     private static String baseUrl;
+
+
 
     @BeforeAll
     @ResourceLock(value = SYSTEM_PROPERTIES, mode = READ_WRITE)
@@ -46,11 +54,14 @@ public class TestBase {
     @BeforeEach
      void setUp() {
         this.apiConnector = new APIConnector(testConfig);
+        /*
         this.webDriver = driverFactory.getDriver();
         this.wait = new WebDriverWait(webDriver,120);
         this.webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         this.webDriver.manage().window().maximize();
         this.webDriver.get(baseUrl);
+         */
+
     }
 
     void verifyURL(String pageName){
@@ -88,7 +99,7 @@ public class TestBase {
 
     @AfterEach
     void tearDown() {
-        webDriver.quit();
+         webDriver.quit();
     }
 
     @AfterAll
@@ -96,6 +107,11 @@ public class TestBase {
 
     }
 
+
+    @Attachment(value = "{0}", type = "image/png")
+    public byte[] screenshot(String name) {
+        return ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
+    }
 
      void importSCFile(LoginPage loginPage, String accountID, String pass){
 
@@ -124,4 +140,8 @@ public class TestBase {
         log.info("Step : Click on Submit Button");
         loginPage.clickSubmitBtn();
     }
+
+
+
+
 }

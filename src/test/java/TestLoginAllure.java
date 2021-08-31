@@ -3,8 +3,6 @@ import pageobj.elements.models.Notification;
 import pageobj.pages.models.DashboardPage;
 import pageobj.pages.models.LoginPage;
 
-
-import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -27,6 +25,7 @@ public class TestLoginAllure extends TestBase {
     @Test
     @DisplayName("Log In by Account ID")
     @Order(2)
+    @Disabled
     void testLogInByAccountID() {
         LoginPage loginPage = getPage(LoginPage.class);
         DashboardPage dashboardPage = getPage(DashboardPage.class);
@@ -46,24 +45,20 @@ public class TestLoginAllure extends TestBase {
 
         log.info("Step 6: Check Log In Page");
         verifyURL("login");
+        assertTrue(false);
 
     }
 
 
 
+    @Test
+    @DisplayName("Log In by Account ID")
+    @Order(2)
+    void testLogInByAccountID1() {
 
-    private boolean isPresent(String fileName, boolean delete){
-        boolean isPresent = false;
+        assertTrue(false);
 
-        File folder = new File(System.getProperty("user.home")+"/Downloads/");
-        File[] listOfFiles = folder.listFiles();
-        for (File file : listOfFiles) {
-                if (file.isFile() && file.getName().contains(fileName)) {
-                  if (delete) file.delete();
-                    isPresent = true;
-                }
-        }
-        return isPresent;
     }
+
 
 }
