@@ -2,7 +2,6 @@ package utils;
 
 import com.google.gson.Gson;
 import conf.TestConfig;
-import conf.Wallet;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;

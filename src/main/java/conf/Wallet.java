@@ -1,5 +1,6 @@
 package conf;
 
+
 public class Wallet {
     private String user;
     private String pass;

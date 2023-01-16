@@ -1,47 +1,40 @@
 package conf;
 
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.junit.Test;
 
-import java.io.FileReader;
+
 import java.net.URL;
 import java.util.logging.Logger;
 
 public class TestConfig {
-    private JSONParser parser;
     private static TestConfig testConfig;
     private String host;
     private Wallet standartWallet;
     private Wallet vaultWallet;
     private String adminPass;
-    private static Logger log = Logger.getLogger(TestConfig.class.getName());
+    private String chainID;
+    private static final Logger log = Logger.getLogger(TestConfig.class.getName());
 
-    private TestConfig(){
+
+    private static TestConfig TestConfigInit(){
 
         try {
             ObjectMapper mapper = new ObjectMapper();
-            URL url = Test.class.getClassLoader().getResource("config.json");
-            parser = new JSONParser();
-            Object obj = parser.parse(new FileReader(url.getPath()));
-            JSONObject jsonObject = (JSONObject) obj;
-            host = (String) jsonObject.get("host");
+            URL url = TestConfig.class.getClassLoader().getResource("config.json");
+            testConfig  = mapper.readValue(new URL(url.toString()), TestConfig.class);
+            System.out.println(url);
+            return testConfig;
 
-            adminPass = (String) jsonObject.get("adminPassword");
-            standartWallet= mapper.readValue(jsonObject.get("standartWallet").toString(), Wallet.class);
-            vaultWallet= mapper.readValue(jsonObject.get("vaultWallet").toString(), Wallet.class);
-            log.info("Configuration fihished");
         }
         catch (Exception e) {
             log.info("Configuration error: "+e.getMessage());
         }
+
+     return null;
     }
     public static TestConfig getTestConfig() {
         if (testConfig == null){
-            testConfig = new TestConfig();
+            testConfig = TestConfigInit();
         }
         return testConfig;
     }
@@ -62,8 +55,14 @@ public class TestConfig {
         return adminPass;
     }
 
+    public String getChainID() {
+        return chainID;
+    }
+
+
+
     public String getSecretFilePath(String walletID){
-        return Test.class.getClassLoader().getResource("walletID").toString();
+        return TestConfig.class.getClassLoader().getResource("walletID").toString();
 
     }
 }
